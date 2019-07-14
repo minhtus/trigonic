@@ -17,27 +17,6 @@
             android:orientation="vertical"
             >
 
-        <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fitsSystemWindows="true"
-                >
-
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-                    app:title="@string/app_name"
-                    >
-
-                <androidx.appcompat.widget.Toolbar
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-        </com.google.android.material.appbar.AppBarLayout>
-
             <com.synnapps.carouselview.CarouselView
                     android:id="@+id/carouselView"
                     android:layout_width="match_parent"
@@ -72,7 +51,6 @@
                     android:id="@+id/fragment_product_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
         </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
