@@ -44,11 +44,11 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
 
         // Showing selected spinner item
         if("LOGIN/REGISTER".equals(item)){
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, ProfileFragment.class);
             startActivity(intent);
         }
         if("ADD PRODUCT".equals(item)){
-            Intent intent = new Intent(this, AddProductFragment.class);
+            Intent intent = new Intent(this, SellFragment.class);
             startActivity(intent);
         }
         if("MEN".equals(item)){
@@ -72,7 +72,7 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
     }
 
     public void clickToViewCart(View view) {
-        Intent intent = new Intent(this, ShoppingCartFragment.class);
+        Intent intent = new Intent(this, CartFragment.class);
         startActivity(intent);
     }
 }

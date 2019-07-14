@@ -1,10 +1,7 @@
 package binh.pc.trigonic;
 
-import android.content.Intent;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -18,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,7 +28,7 @@ import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
-public class AddProductFragment extends Fragment implements AdapterView.OnItemSelectedListener{
+public class SellFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     EditText editProduct;
     EditText editCondition;
     EditText editSize;
@@ -42,7 +38,7 @@ public class AddProductFragment extends Fragment implements AdapterView.OnItemSe
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_add_product, null);
+        View view = inflater.inflate(R.layout.fragment_sell, container, false);
 
         editProduct = view.findViewById(R.id.editProduct);
         editCondition = view.findViewById(R.id.editCondition);
@@ -51,8 +47,8 @@ public class AddProductFragment extends Fragment implements AdapterView.OnItemSe
         txtTax = view.findViewById(R.id.txtTax);
         txtTruePrice = view.findViewById(R.id.txtTruePrice);
 
-        Spinner brand = (Spinner) view.findViewById(R.id.brand);
-        List<String> brandLists = new ArrayList<String>();
+        Spinner brand = view.findViewById(R.id.brand);
+        List<String> brandLists = new ArrayList<>();
         brandLists.add("Adidas");
         brandLists.add("Alexander McQueen");
         brandLists.add("Balenciaga");

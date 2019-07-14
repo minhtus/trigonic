@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     break;
                 case R.id.action_sell:
-                    fragment = new AddProductFragment();
+                    fragment = new SellFragment();
                     break;
                 case R.id.action_cart:
-                    fragment = new ShoppingCartFragment();
+                    fragment = new CartFragment();
                     break;
                 case R.id.action_account:
-                    fragment = new LoginActivity();
+                    fragment = new ProfileFragment();
                     break;
             }
             return loadFragment(fragment);
