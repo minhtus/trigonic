@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_home:
                         fragment = new HomeFragment();
                         break;
-                    case R.id.action_add:
+                    case R.id.action_sell:
                         fragment = new AddProductFragment();
                         break;
                     case R.id.action_cart:

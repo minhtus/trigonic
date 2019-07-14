@@ -6,25 +6,25 @@
     <item
         android:id="@+id/action_home"
         android:enabled="true"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home"
         />
     <item
-        android:id="@+id/action_add"
+        android:id="@+id/action_sell"
         android:enabled="true"
-        android:icon="@drawable/ic_offer"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
         android:title="@string/title_sell"
         />
     <item
         android:id="@+id/action_cart"
         android:enabled="true"
-        android:icon="@drawable/ic_cart"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
         android:title="@string/title_cart"
         />
     <item
         android:id="@+id/action_account"
         android:enabled="true"
-        android:icon="@drawable/ic_account"
+        android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="@string/title_profile"
         />
 </menu>

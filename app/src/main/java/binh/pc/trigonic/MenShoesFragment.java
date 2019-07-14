@@ -22,7 +22,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenShoesFragment extends Fragment {
-    Fragment fragment = null;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,7 +29,6 @@ public class MenShoesFragment extends Fragment {
         final Intent intent = new Intent(getActivity(), DetailProductActivity.class);
         Button button = view.findViewById(R.id.imagebutton);
         button.setOnClickListener(v -> startActivity(intent));
-
         return view;
     }
 

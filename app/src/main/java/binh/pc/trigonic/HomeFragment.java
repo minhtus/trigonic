@@ -1,24 +1,19 @@
 package binh.pc.trigonic;
 
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import com.google.android.material.tabs.TabLayout;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     Fragment fragment = null;
@@ -39,38 +34,36 @@ public class HomeFragment extends Fragment {
         fragment = new PopularFragment();
         loadFragment(fragment);
 
-        BottomNavigationView midNavigationView =  view.findViewById(R.id.mid_navigation);
-        midNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+        TabLayout tabLayout = view.findViewById(R.id.mid_navigation);
+            tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                @Override
+                public void onTabSelected(TabLayout.Tab tab) {
+                    switch (tab.getPosition()) {
+                        case 0:
+                            fragment = new PopularFragment();
+                            break;
+                        case 1:
+                            fragment = new MenShoesFragment();
+                            break;
+                        case 2:
+                            fragment = new WomenShoesFragment();
+                            break;
 
-            switch (menuItem.getItemId()){
-                case R.id.action_popular:
-//                        SpannableString san = new SpannableString(menuItem.getTitle());
-//                        final StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD);
-//                        san.setSpan(bss, 0, san.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-//                        san.setSpan(new RelativeSizeSpan(.7f),0,san.length(),0);
-//                        menuItem.setTitle(san);
-//                        fragment = new HomeFragment();
-                    fragment = new PopularFragment();
-                    break;
-                case R.id.action_men:
-//                        SpannableString san1 = new SpannableString(menuItem.getTitle());
-//                        final StyleSpan bss1 = new StyleSpan(android.graphics.Typeface.BOLD);
-//                        san1.setSpan(bss1, 0, san1.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-//                        san1.setSpan(new RelativeSizeSpan(.7f),0,san1.length(),0);
-//                        menuItem.setTitle(san1);
-                    fragment = new MenShoesFragment();
-                    break;
-                case R.id.action_women:
-//                        SpannableString san2 = new SpannableString(menuItem.getTitle());
-//                        final StyleSpan bss2 = new StyleSpan(android.graphics.Typeface.BOLD);
-//                        san2.setSpan(bss2, 0, san2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-//                        san2.setSpan(new RelativeSizeSpan(.7f),0,san2.length(),0);
-//                        menuItem.setTitle(san2);
-                    fragment = new WomenShoesFragment();
-                    break;
-            }
-            return loadFragment(fragment);
-        });
+                    }
+                    loadFragment(fragment);
+                }
+
+                @Override
+                public void onTabUnselected(TabLayout.Tab tab) {
+
+                }
+
+                @Override
+                public void onTabReselected(TabLayout.Tab tab) {
+
+                }
+            });
+
         return view;
     }
 

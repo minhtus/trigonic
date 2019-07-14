@@ -18,13 +18,11 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class WomenShoesFragment extends Fragment {
-    Fragment fragment = null;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_women_shoes, null);
 
-        return view;
+        return inflater.inflate(R.layout.fragment_women_shoes, null);
     }
 
 }

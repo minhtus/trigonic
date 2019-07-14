@@ -11,17 +11,37 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
-
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
 
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    app:title="@string/app_name"
+                    >
+
+                <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
             <com.synnapps.carouselview.CarouselView
                     android:id="@+id/carouselView"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="150dp"
                     app:fillColor="#FFFFFFFF"
                     app:pageColor="#00000000"
                     app:radius="6dp"
@@ -29,16 +49,24 @@
                     app:strokeColor="#FF777777"
                     app:strokeWidth="1dp"/>
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
+        <com.google.android.material.tabs.TabLayout
                 android:id="@+id/mid_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:menu="@menu/mid_navigation"
-                android:layout_gravity="bottom"
-                app:itemTextColor="#000"
-                android:theme="@style/customActionBar"
-                android:background="@drawable/boder"
-                />
+                android:layout_height="wrap_content"
+                >
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/title_popular"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"/>
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/title_men"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"/>
+            <com.google.android.material.tabs.TabItem
+                    android:text="@string/title_women"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"/>
+        </com.google.android.material.tabs.TabLayout>
 
             <FrameLayout
                     android:id="@+id/fragment_product_container"
