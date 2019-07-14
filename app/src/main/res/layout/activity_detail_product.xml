@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailProductActivity">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:background="#000000">
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:height="75dp"
+            android:drawableLeft="@drawable/logoicon"
+            android:paddingLeft="10dp"
+
+            />
+        <Button
+            android:id="@+id/btnCart"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:background="#000"
+            android:drawableLeft="@drawable/cart"
+            android:onClick="clickToViewCart"
+
+            />
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/baseline"
+
+            />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="MEN'S SHOES"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="5.869.000₫"
+                android:gravity="right"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nike Air Max 720 SATRN"
+
+                android:textSize="30dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/nam720s"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inspired by the Vaporfly, the Nike Zoom Fly 3 gives distance runners race-day comfort and durability. The propulsive power of a carbon-fibre plate keeps you in the running mile after mile."
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/round"
+                android:text=" Colour Shown: Black/White/Bright Crimson/Hyper Jade"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/round"
+                android:text=" Style: AO2110-002"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Add To Cart"
+                android:textSize="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="#000"
+                android:textColor="#fff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/line2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FREE DELIVERY Applies to orders of 5.000.000₫ or more. Returns are free for TRIGONIC+ members."
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:background="@drawable/support"
+                android:height="100dp"
+                android:textColor="#ff3333"
+                android:layout_marginTop="10dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical"
+                android:background="#1B1B1B">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:height="300dp"
+
+                    android:drawableTop="@drawable/logomain"
+
+                    android:drawableBottom="@drawable/line1"
+                    android:paddingTop="60dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="2019 Ⓒ Trigonic. All rights reserved"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:textSize="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="With love from Trigonic"
+                    android:gravity="center"
+                    android:textColor="#fff"
+                    android:textSize="10dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

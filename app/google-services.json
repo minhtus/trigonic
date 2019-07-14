@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "306732430724",
+    "firebase_url": "https://trigonic-1f326.firebaseio.com",
+    "project_id": "trigonic-1f326",
+    "storage_bucket": "trigonic-1f326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306732430724:android:1999feaa531eaeba",
+        "android_client_info": {
+          "package_name": "binh.pc.trigonic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306732430724-ojerj5lqd12544fdrkukn7bvd5ajcvg2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "binh.pc.trigonic",
+            "certificate_hash": "d6d089b1722164a88f9ec7e6e6f91b5db754c6a8"
+          }
+        },
+        {
+          "client_id": "306732430724-d9v8h6s18uhvd058kj00ci8es18n2642.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPUoCbSdA5lDIauxSO9HlZWEj9CQ5R82U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306732430724-d9v8h6s18uhvd058kj00ci8es18n2642.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

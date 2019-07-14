@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_popular"
+        android:enabled="true"
+        android:title="Popular"
+        />
+    <item
+        android:id="@+id/action_men"
+        android:enabled="true"
+        android:title="Men"
+        />
+
+    <item
+        android:id="@+id/action_women"
+        android:enabled="true"
+        android:title="Women" />
+</menu>
