@@ -28,8 +28,6 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
         categories.add("ADD PRODUCT");
         categories.add("LOGIN/REGISTER");
 
-
-
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
         // Drop down layout style - list view with radio button
@@ -50,15 +48,15 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
             startActivity(intent);
         }
         if(item == "ADD PRODUCT"){
-            Intent intent = new Intent(this, AddProductActivity.class);
+            Intent intent = new Intent(this, AddProductFragment.class);
             startActivity(intent);
         }
         if(item == "MEN"){
-            Intent intent = new Intent(this, MenShoesActivity.class);
+            Intent intent = new Intent(this, MenShoesFragment.class);
             startActivity(intent);
         }
         if(item == "WOMEN"){
-            Intent intent = new Intent(this, WomenShoesActivity.class);
+            Intent intent = new Intent(this, WomenShoesFragment.class);
             startActivity(intent);
         }
         if(item == "HOME"){
@@ -74,7 +72,7 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
     }
 
     public void clickToViewCart(View view) {
-        Intent intent = new Intent(this, ShoppingCartActivity.class);
+        Intent intent = new Intent(this, ShoppingCartFragment.class);
         startActivity(intent);
     }
 }

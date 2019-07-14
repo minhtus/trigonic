@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new HomeFragment();
                         break;
                     case R.id.action_add:
-                        fragment = new AddProductActivity();
+                        fragment = new AddProductFragment();
                         break;
                     case R.id.action_cart:
-                        fragment = new ShoppingCartActivity();
+                        fragment = new ShoppingCartFragment();
                         break;
                     case R.id.action_account:
                         fragment = new LoginActivity();
@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
 //                        fragment = new HomeFragment();
 //                        break;
 //                    case R.id.action_men:
-//                        fragment = new MenShoesActivity();
+//                        fragment = new MenShoesFragment();
 //                        break;
 //                    case R.id.action_women:
-//                        fragment = new WomenShoesActivity();
+//                        fragment = new WomenShoesFragment();
 //                        break;
 //                }
 //                return LoadFragment(fragment);

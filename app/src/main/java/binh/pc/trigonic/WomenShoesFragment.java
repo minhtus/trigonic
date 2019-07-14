@@ -1,10 +1,7 @@
 package binh.pc.trigonic;
 
-import android.content.Intent;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -16,31 +13,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
-
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class MenShoesActivity extends Fragment {
+public class WomenShoesFragment extends Fragment {
     Fragment fragment = null;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_men_shoes, null);
-        final Intent intent = new Intent(getActivity(), DetailProductActivity.class);
-        Button button = view.findViewById(R.id.imagebutton);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
+        View view = inflater.inflate(R.layout.fragment_women_shoes, null);
 
         BottomNavigationView midNavigationView = (BottomNavigationView) view.findViewById(R.id.mid_navigation);
         midNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,7 +42,7 @@ public class MenShoesActivity extends Fragment {
                         san1.setSpan(bss1, 0, san1.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                         san1.setSpan(new RelativeSizeSpan(.7f),0,san1.length(),0);
                         menuItem.setTitle(san1);
-                        fragment = new MenShoesActivity();
+                        fragment = new MenShoesFragment();
                         break;
                     case R.id.action_women:
                         SpannableString san2 = new SpannableString(menuItem.getTitle());
@@ -69,7 +50,7 @@ public class MenShoesActivity extends Fragment {
                         san2.setSpan(bss2, 0, san2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                         san2.setSpan(new RelativeSizeSpan(.7f),0,san2.length(),0);
                         menuItem.setTitle(san2);
-                        fragment = new WomenShoesActivity();
+                        fragment = new WomenShoesFragment();
                         break;
                 }
                 return LoadFragment(fragment);
@@ -87,7 +68,5 @@ public class MenShoesActivity extends Fragment {
         }
         return false;
     }
-
-
 
 }

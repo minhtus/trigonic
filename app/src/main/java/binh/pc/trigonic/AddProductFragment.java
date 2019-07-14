@@ -32,7 +32,7 @@ import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
-public class AddProductActivity extends Fragment implements AdapterView.OnItemSelectedListener{
+public class AddProductFragment extends Fragment implements AdapterView.OnItemSelectedListener{
     EditText editProduct;
     EditText editCondition;
     EditText editSize;

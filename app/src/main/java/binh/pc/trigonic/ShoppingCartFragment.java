@@ -18,7 +18,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingCartActivity extends Fragment{
+public class ShoppingCartFragment extends Fragment{
 
     @Nullable
     @Override

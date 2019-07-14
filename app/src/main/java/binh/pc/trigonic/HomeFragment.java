@@ -1,23 +1,16 @@
 package binh.pc.trigonic;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,7 +28,7 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_home, null);
+        View view = inflater.inflate(R.layout.fragment_home, null);
         carouselView =  view.findViewById(R.id.carouselView);
         carouselView.setPageCount(carouselImages.length);
         carouselView.setImageListener(imageListener);
@@ -62,7 +55,7 @@ public class HomeFragment extends Fragment {
                         san1.setSpan(bss1, 0, san1.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                         san1.setSpan(new RelativeSizeSpan(.7f),0,san1.length(),0);
                         menuItem.setTitle(san1);
-                        fragment = new MenShoesActivity();
+                        fragment = new MenShoesFragment();
                         break;
                     case R.id.action_women:
                         SpannableString san2 = new SpannableString(menuItem.getTitle());
@@ -70,7 +63,7 @@ public class HomeFragment extends Fragment {
                         san2.setSpan(bss2, 0, san2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                         san2.setSpan(new RelativeSizeSpan(.7f),0,san2.length(),0);
                         menuItem.setTitle(san2);
-                        fragment = new WomenShoesActivity();
+                        fragment = new WomenShoesFragment();
                         break;
                 }
                 return LoadFragment(fragment);
