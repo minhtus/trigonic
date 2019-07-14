@@ -37,6 +37,9 @@ dependencies {
 
     implementation 'com.synnapps:carouselview:0.1.5'
     implementation 'com.google.android.material:material:1.1.0-alpha08'
+    implementation group: 'androidx.recyclerview', name: 'recyclerview', version: '1.0.0'
+    implementation group: 'androidx.cardview', name: 'cardview', version: '1.0.0'
+    implementation group: 'com.github.bumptech.glide', name: 'glide', version: '4.9.0'
 }
 
 

@@ -43,23 +43,23 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
         String item = parent.getItemAtPosition(position).toString();
 
         // Showing selected spinner item
-        if(item == "LOGIN/REGISTER"){
+        if("LOGIN/REGISTER".equals(item)){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
-        if(item == "ADD PRODUCT"){
+        if("ADD PRODUCT".equals(item)){
             Intent intent = new Intent(this, AddProductFragment.class);
             startActivity(intent);
         }
-        if(item == "MEN"){
+        if("MEN".equals(item)){
             Intent intent = new Intent(this, MenShoesFragment.class);
             startActivity(intent);
         }
-        if(item == "WOMEN"){
+        if("WOMEN".equals(item)){
             Intent intent = new Intent(this, WomenShoesFragment.class);
             startActivity(intent);
         }
-        if(item == "HOME"){
+        if("HOME".equals(item)){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }

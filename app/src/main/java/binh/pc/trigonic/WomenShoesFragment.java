@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class WomenShoesFragment extends Fragment {
@@ -23,50 +24,7 @@ public class WomenShoesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_women_shoes, null);
 
-        BottomNavigationView midNavigationView = (BottomNavigationView) view.findViewById(R.id.mid_navigation);
-        midNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.action_popular:
-                        SpannableString san = new SpannableString(menuItem.getTitle());
-                        final StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD);
-                        san.setSpan(bss, 0, san.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                        san.setSpan(new RelativeSizeSpan(.7f),0,san.length(),0);
-                        menuItem.setTitle(san);
-                        fragment = new HomeFragment();
-                        break;
-                    case R.id.action_men:
-                        SpannableString san1 = new SpannableString(menuItem.getTitle());
-                        final StyleSpan bss1 = new StyleSpan(android.graphics.Typeface.BOLD);
-                        san1.setSpan(bss1, 0, san1.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                        san1.setSpan(new RelativeSizeSpan(.7f),0,san1.length(),0);
-                        menuItem.setTitle(san1);
-                        fragment = new MenShoesFragment();
-                        break;
-                    case R.id.action_women:
-                        SpannableString san2 = new SpannableString(menuItem.getTitle());
-                        final StyleSpan bss2 = new StyleSpan(android.graphics.Typeface.BOLD);
-                        san2.setSpan(bss2, 0, san2.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                        san2.setSpan(new RelativeSizeSpan(.7f),0,san2.length(),0);
-                        menuItem.setTitle(san2);
-                        fragment = new WomenShoesFragment();
-                        break;
-                }
-                return LoadFragment(fragment);
-            }
-        });
         return view;
-    }
-    private boolean LoadFragment(Fragment fragment){
-        if(fragment != null){
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
     }
 
 }

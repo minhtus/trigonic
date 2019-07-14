@@ -1,60 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MenShoesFragment">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".WomenShoesFragment">
 
 
-    <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="575dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            >
-
-        <LinearLayout android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="360dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/snkr1"
-                        android:gravity="center"
-                        android:textColor="#ff3333"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        />
-                    <TextView
-                        android:layout_width="360dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/img4"
-                        android:gravity="center"
-                        android:textColor="#ff3333"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/mid_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:menu="@menu/mid_navigation"
-                android:layout_gravity="bottom"
-                app:itemTextColor="#000"
-                android:theme="@style/customActionBar"
-                android:background="@drawable/boder"
-                />
-            <TextView
+    <TextView
                 android:layout_width="120dp"
                 android:layout_height="4dp"
                 android:layout_marginLeft="240dp"
@@ -387,6 +340,3 @@
             </LinearLayout>
 
         </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-</LinearLayout>

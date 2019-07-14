@@ -8,31 +8,10 @@
                 android:orientation="vertical"
                 tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:id="@+id/appbar"
-            app:liftOnScroll="true"
-            >
-
-        <androidx.appcompat.widget.Toolbar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                app:layout_scrollFlags="enterAlways"
-                />
-        <com.google.android.material.tabs.TabLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="enterAlways"
-                />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/appbar"
             />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
