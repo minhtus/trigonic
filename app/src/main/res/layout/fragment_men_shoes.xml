@@ -6,24 +6,13 @@
               android:orientation="vertical"
               tools:context=".MenShoesFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_men"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:gravity="center"
-            android:text="Shoes For Men"
-            android:textColor="#000"
-            android:textSize="30dp"
-            android:textStyle="bold"/>
-
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/line3"/>
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            />
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +29,6 @@
                 android:orientation="vertical">
 
             <Button
-                    android:id="@+id/imagebutton"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:adjustViewBounds="true"
@@ -313,51 +301,5 @@
                         android:textSize="15dp" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:height="100dp"
-                android:background="@drawable/support"
-                android:gravity="center"
-                android:textColor="#ff3333"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="#1B1B1B"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:height="300dp"
-
-                    android:drawableTop="@drawable/logomain"
-
-                    android:drawableBottom="@drawable/line1"
-                    android:paddingTop="60dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="2019 Ⓒ Trigonic. All rights reserved"
-                    android:textColor="#fff"
-                    android:textSize="10dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="With love from Trigonic"
-                    android:textColor="#fff"
-                    android:textSize="10dp" />
             </LinearLayout>
 </LinearLayout>
