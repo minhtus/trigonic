@@ -15,6 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageClickListener;
+import com.synnapps.carouselview.ImageListener;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,10 +28,20 @@ import androidx.fragment.app.Fragment;
 
 public class HomeFragment extends Fragment {
     Fragment fragment = null;
+    private int[] carouselImages = {R.drawable.capture, R.drawable.image, R.drawable.img4};
+    private CarouselView carouselView;
+
+    ImageListener imageListener = (position, imageView) -> imageView.setImageResource(carouselImages[position]);
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_home, null);
+        carouselView =  view.findViewById(R.id.carouselView);
+        carouselView.setPageCount(carouselImages.length);
+        carouselView.setImageListener(imageListener);
+        carouselView.setImageClickListener(position ->
+                Toast.makeText(getActivity() , "Clicked item: "+ position, Toast.LENGTH_SHORT).show());
+
         BottomNavigationView midNavigationView = (BottomNavigationView) view.findViewById(R.id.mid_navigation);
         midNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -7,24 +7,24 @@
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="Home"
+        android:title="@string/title_home"
         />
     <item
         android:id="@+id/action_add"
         android:enabled="true"
         android:icon="@drawable/ic_offer"
-        android:title="Add"
+        android:title="@string/title_sell"
         />
     <item
         android:id="@+id/action_cart"
         android:enabled="true"
         android:icon="@drawable/ic_cart"
-        android:title="Your Cart"
+        android:title="@string/title_cart"
         />
     <item
         android:id="@+id/action_account"
         android:enabled="true"
         android:icon="@drawable/ic_account"
-        android:title="Account"
+        android:title="@string/title_profile"
         />
 </menu>
