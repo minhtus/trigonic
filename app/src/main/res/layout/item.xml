@@ -16,7 +16,9 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            />
 
     <LinearLayout
             android:layout_width="wrap_content"

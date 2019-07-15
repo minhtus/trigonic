@@ -1,6 +1,7 @@
 package binh.pc.trigonic;
 
 import android.content.Intent;
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,8 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
+        ImageView image = findViewById(R.id.imgBack);
+        image.setOnClickListener(v -> this.finish());
     }
 
     @Override

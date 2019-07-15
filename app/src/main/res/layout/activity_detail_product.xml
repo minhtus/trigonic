@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".DetailProductActivity">
 
+    <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            />
+
     <ScrollView android:layout_width="match_parent"
         android:layout_height="match_parent">
 
