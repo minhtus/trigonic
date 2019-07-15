@@ -1,398 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CartFragment">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:liftOnScroll="true">
 
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="575dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="?attr/catalogToolbarWithCloseButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            app:buttonGravity="center_vertical"
+            app:title="Cart"
+            app:titleTextColor="@color/cardview_light_background" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <LinearLayout android:layout_width="match_parent"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="1000dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="125dp"
-                android:orientation="vertical"
-                android:background="#444444">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="CHECKOUT"
-                    android:textColor="#fff"
-                    android:textSize="40dp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:text="1 Item(s)"
-                        android:textColor="#999999"
-                        android:textSize="30dp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
 
-                        />
-                    <TextView
-                        android:layout_width="200dp"
-                        android:layout_height="50dp"
-                        android:text="$125"
-                        android:textColor="#FA5400"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-
-
-                        />
-                </LinearLayout>
-                
-
-            </LinearLayout>
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="#444444"
-                    android:text="Fill Your Information"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="30dp"
-                    android:textColor="#fff"/>
+                android:layout_margin="@dimen/mtrl_card_spacing"
+                android:clickable="true"
+                android:focusable="true">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:text="First Name"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:contentDescription="Cart Image"
+                        app:srcCompat="@drawable/ic_clear_black_24dp" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
+                        android:layout_marginTop="-15dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Cart Tittle"
+                                android:text="Jordan Proto-Max 720"
+                                android:textColor="@color/vpi__background_holo_dark"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="Super Legit - Verify by Trigonic" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="1.200.000 đ"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="15dp"
+                            android:contentDescription="Cart Image"
+                            app:srcCompat="@drawable/jpm720" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mtrl_card_spacing"
+                android:clickable="true"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:text="Last Name"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="right"
+                        android:contentDescription="Cart Image"
+                        app:srcCompat="@drawable/ic_clear_black_24dp" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
+                        android:layout_marginTop="-15dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="175dp"
-                        android:layout_height="wrap_content"
-                        android:text="Address Line 1"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="Cart Tittle"
+                                android:text="Nike React Element 55"
+                                android:textColor="@color/vpi__background_holo_dark"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="Super Legit - Verify by Trigonic" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="175dp"
-                        android:layout_height="wrap_content"
-                        android:text="Address Line 2"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Optional)"
-                        android:textSize="25dp"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="3.400.000 đ"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="175dp"
-                        android:layout_height="wrap_content"
-                        android:text="Address Line 3"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Optional)"
-                        android:textSize="25dp"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="City/Location"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:text="Postal Index Number"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:text="Country"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="15dp"
+                            android:contentDescription="Cart Image"
+                            app:srcCompat="@drawable/aj14rse" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
+            </com.google.android.material.card.MaterialCardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="190dp"
-                        android:layout_height="wrap_content"
-                        android:text="Shipping Phone"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="75dp"
-                        android:layout_height="wrap_content"
-                        android:text="Email"
-                        android:textColor="#000"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="*"
-                        android:textColor="#CC2825"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"/>
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"/>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="CONFIRM"
-                    android:textSize="20dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="#FA5400"
-                    android:textColor="#fff"/>
-
-
-            </LinearLayout>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Input coupon"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:background="@drawable/support"
-                android:height="100dp"
-                android:layout_marginTop="50dp"
-                android:textColor="#ff3333"/>
+                android:layout_margin="@dimen/mtrl_card_spacing"
+                android:clickable="true"
+                android:focusable="true">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <LinearLayout
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dip"
+                        android:layout_weight=".75"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:hint="Coupon"
+                        app:counterEnabled="true"
+                        app:errorEnabled="true"
+                        app:helperTextEnabled="true"
+                        app:startIconDrawable="@drawable/ic_favorite_black_24dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <Button
+                        android:id="@+id/material_button"
+                        android:layout_weight=".25"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Apply" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:orientation="vertical"
-                android:background="#1B1B1B">
-
-                <TextView
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mtrl_card_spacing"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:height="300dp"
-
-                    android:drawableTop="@drawable/logomain"
-
-                    android:drawableBottom="@drawable/line1"
-                    android:paddingTop="60dp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:text="2019 Ⓒ Trigonic. All rights reserved"
-                    android:gravity="center"
-                    android:textColor="#fff"
-                    android:textSize="10dp"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:text="With love from Trigonic"
-                    android:gravity="center"
-                    android:textColor="#fff"
-                    android:textSize="10dp"
-                    />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:layout_gravity="top|left"
+                            android:textSize="16dp"
+                            android:text="Monney"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="right"
+                            android:textSize="18dp"
+                            android:textColor="#8B0000"
+                            android:textStyle="bold"
+                            android:text="5.400.000 đ"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Including the cost of shoe check"/>
+                    <Button
+                        android:id="@+id/material_button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Proceed to order" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-    </ScrollView>
-
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
