@@ -3,16 +3,13 @@ package binh.pc.trigonic;
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.*;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, DatePickerDialog.OnDateSetListener{
@@ -23,55 +20,15 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         setContentView(R.layout.activity_register);
         txtBirthday = findViewById(R.id.txtBirthday);
 
-        Spinner country = (Spinner) findViewById(R.id.country);
+        Spinner country = findViewById(R.id.country);
         country.setOnItemSelectedListener(this);
-        List<String> countryLists = new ArrayList<String>();
-        countryLists.add("Vietnam");
-        countryLists.add("Afghanistan");
-        countryLists.add("Albania");
-        countryLists.add("American Samoa");
-        countryLists.add("Andorra");
-        countryLists.add("Angola");
-        countryLists.add("Anguilla");
-        countryLists.add("Australia");
-        countryLists.add("Brazil");
-        countryLists.add("Brunei Darussalam");
-        countryLists.add("British Indian Ocean Territory");
-        countryLists.add("Bulgaria");
-        countryLists.add("Cambodia");
-        countryLists.add("Canada");
-        countryLists.add("China Mainland ");
-        countryLists.add("Colombia");
-        countryLists.add("Cuba");
-        countryLists.add("Cyprus");
-        countryLists.add("Czech Republic");
-        countryLists.add("Ethiopia");
-        countryLists.add("European Union");
-        countryLists.add("France");
-        countryLists.add("French Southern Territories");
-        countryLists.add("Germany");
-        countryLists.add("Grenada");
-        countryLists.add("Hong Kong");
-        countryLists.add("India");
-        countryLists.add("Indonesia");
-        countryLists.add("Italy");
-        countryLists.add("Japan");
-        countryLists.add("Korea, Republic of");
-        countryLists.add("Liberia");
-        countryLists.add("Macau");
-        countryLists.add("Mexico");
-        countryLists.add("New Zealand");
-        countryLists.add("Peru");
-        countryLists.add("Philippines");
-        countryLists.add("Qatar");
-        countryLists.add("Singapore");
-        countryLists.add("Taiwan");
-        countryLists.add("United Kingdom");
-        countryLists.add("United States");
-        countryLists.add("Virgin Islands (British)");
-        countryLists.add("Zimbabwe");
-
-
+        List<String> countryLists = new ArrayList<>(Arrays.asList("Vietnam", "Afghanistan", "Albania", "American Samoa",
+                "Andorra", "Angola", "Anguilla", "Australia", "Brazil", "Brunei Darussalam", "British Indian Ocean Territory",
+                "Bulgaria", "Cambodia", "Canada", "China Mainland ", "Colombia", "Cuba", "Cyprus", "Czech Republic",
+                "Ethiopia", "European Union", "France", "French Southern Territories", "Germany", "Grenada",
+                "Hong Kong", "India", "Indonesia", "Italy", "Japan", "Republic of Korea", "Liberia", "Macau",
+                "Mexico", "New Zealand", "Peru", "Philippines", "Qatar", "Singapore", "Taiwan", "United Kingdom",
+                "United States", "Virgin Islands (British)", "Zimbabwe"));
 
         ArrayAdapter<String> countryAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countryLists);
 
