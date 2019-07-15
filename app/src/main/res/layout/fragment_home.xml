@@ -31,7 +31,12 @@
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/mid_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:layout_gravity="bottom"
+                android:background="@android:color/transparent"
+                app:tabTextColor="?colorOnSurface"
+                app:tabSelectedTextColor="?colorPrimary"
+                app:tabIndicatorColor="?colorPrimary"
                 >
             <com.google.android.material.tabs.TabItem
                     android:text="@string/title_popular"

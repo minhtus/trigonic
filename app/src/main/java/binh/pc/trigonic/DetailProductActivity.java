@@ -48,7 +48,7 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
             startActivity(intent);
         }
         if("ADD PRODUCT".equals(item)){
-            Intent intent = new Intent(this, SellFragment.class);
+            Intent intent = new Intent(this, GuestSellFragment.class);
             startActivity(intent);
         }
         if("MEN".equals(item)){
