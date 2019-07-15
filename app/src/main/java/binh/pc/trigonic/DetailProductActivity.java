@@ -17,24 +17,6 @@ public class DetailProductActivity extends AppCompatActivity implements AdapterV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setOnItemSelectedListener(this);
-        List<String> categories = new ArrayList<String>();
-        categories.add("");
-        categories.add("HOME");
-        categories.add("MEN");
-        categories.add("WOMEN");
-        categories.add("ABOUT US");
-        categories.add("ADD PRODUCT");
-        categories.add("LOGIN/REGISTER");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
     }
 
     @Override

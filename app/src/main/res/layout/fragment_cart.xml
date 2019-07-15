@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinator"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/coordinator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -27,7 +27,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:minHeight="1000dp"
+        android:layout_below="@+id/appbarlayout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -86,7 +86,7 @@
                                 android:layout_marginTop="8dp"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="Super Legit - Verify by Trigonic" />
+                                android:text="Cond 9.0 - Verify by Trigonic" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -94,7 +94,7 @@
                                 android:layout_marginTop="8dp"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="1.200.000 đ"
+                                android:text="₫1.200.000"
                                 android:textSize="15dp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -112,11 +112,12 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/mtrl_card_spacing"
-                android:clickable="true"
-                android:focusable="true">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/mtrl_card_spacing"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -161,7 +162,7 @@
                                 android:layout_marginTop="8dp"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="Super Legit - Verify by Trigonic" />
+                                android:text="Cond 8.5 - Verify by Trigonic" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -169,7 +170,7 @@
                                 android:layout_marginTop="8dp"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="3.400.000 đ"
+                                android:text="₫3.400.000"
                                 android:textSize="15dp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -186,99 +187,108 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Input coupon"
-                android:textAppearance="?attr/textAppearanceSubtitle1" />
+        </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mtrl_card_spacing"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_above="@+id/card_order"
+            >
+
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/mtrl_card_spacing"
-                android:clickable="true"
-                android:focusable="true">
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dip"
+                    android:layout_weight=".75"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="4dp"
+                    android:hint="Coupon"
+                    app:counterEnabled="true"
+                    app:errorEnabled="true"
+                    app:helperTextEnabled="true"
+                    app:startIconDrawable="@drawable/ic_favorite_black_24dp">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="0dip"
-                        android:layout_weight=".75"
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:hint="Coupon"
-                        app:counterEnabled="true"
-                        app:errorEnabled="true"
-                        app:helperTextEnabled="true"
-                        app:startIconDrawable="@drawable/ic_favorite_black_24dp">
+                        android:inputType="text"
+                        />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <Button
-                        android:id="@+id/material_button"
-                        android:layout_weight=".25"
+            <Button
+                    android:id="@+id/material_button"
+                    android:layout_weight=".25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Apply"/>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mtrl_card_spacing"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentBottom="true"
+            >
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Apply" />
-                </LinearLayout>
+                        android:layout_weight="0.4"
+                        android:layout_gravity="top|left"
+                        android:textSize="16dp"
+                        android:text="Total"/>
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/mtrl_card_spacing"
-                android:clickable="true"
-                android:focusable="true">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:orientation="horizontal"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.4"
-                            android:layout_gravity="top|left"
-                            android:textSize="16dp"
-                            android:text="Monney"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.6"
-                            android:gravity="right"
-                            android:textSize="18dp"
-                            android:textColor="#8B0000"
-                            android:textStyle="bold"
-                            android:text="5.400.000 đ"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="match_parent"
+                <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
                         android:gravity="right"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="Including the cost of shoe check"/>
-                    <Button
-                        android:id="@+id/material_button2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Proceed to order" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        android:textSize="18dp"
+                        android:textColor="#8B0000"
+                        android:textStyle="bold"
+                        android:text="₫5.400.000"/>
+            </LinearLayout>
 
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Included the cost of shoe check"/>
+
+            <Button
+                    android:id="@+id/material_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Proceed to order"/>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

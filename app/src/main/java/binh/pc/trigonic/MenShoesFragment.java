@@ -38,9 +38,6 @@ public class MenShoesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_men_shoes, container, false);
-//        final Intent intent = new Intent(getActivity(), DetailProductActivity.class);
-//        Button button = view.findViewById(R.id.imagebutton);
-//        button.setOnClickListener(v -> startActivity(intent));
 
         fetchProducts();
 

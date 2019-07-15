@@ -1,15 +1,16 @@
 package binh.pc.trigonic.models;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import binh.pc.trigonic.DetailProductActivity;
 import binh.pc.trigonic.R;
 import com.bumptech.glide.Glide;
 
@@ -69,7 +70,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             price = itemView.findViewById(R.id.txtPrice);
             cond = itemView.findViewById(R.id.txtCond);
             image.setOnClickListener(v -> {
-                Toast.makeText(v.getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+                final Intent intent = new Intent(v.getContext(), DetailProductActivity.class);
+                v.getContext().startActivity(intent);
             });
         }
     }
