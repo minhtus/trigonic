@@ -18,17 +18,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="AppCompatResource">
-    <item
-        android:title="Edit"
-        app:showAsAction="ifRoom"/>
-    <item
-        android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="Favorite"
-        app:showAsAction="ifRoom"/>
-    <item
-        android:title="Setting"
-        app:showAsAction="never"/>
-    <item
-        android:title="Help / Feedback"
-        app:showAsAction="never"/>
+    <!--<item-->
+        <!--android:title="Edit"-->
+        <!--app:showAsAction="ifRoom"/>-->
+    <!--<item-->
+        <!--android:icon="@drawable/ic_favorite_black_24dp"-->
+        <!--android:title="Favorite"-->
+        <!--app:showAsAction="ifRoom"/>-->
+    <!--<item-->
+        <!--android:title="Setting"-->
+        <!--app:showAsAction="never"/>-->
+    <!--<item-->
+        <!--android:title="Help / Feedback"-->
+        <!--app:showAsAction="never"/>-->
 </menu>
