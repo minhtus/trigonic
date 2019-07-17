@@ -1,7 +1,7 @@
 package binh.pc.trigonic;
 
 import android.os.Build;
-import android.widget.ImageView;
+import android.view.*;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,27 +11,25 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import binh.pc.trigonic.database.AppDatabase;
+import binh.pc.trigonic.models.CartAdapter;
 import binh.pc.trigonic.models.Product;
 
 import java.util.List;
 
 public class CartFragment extends Fragment{
-    private List<Product> productList;
-    private ImageView imgClear;
     TextView txtTotal;
+    private CartAdapter cartAdapter;
+    private RecyclerView cartRecyclerView;
 
     @Override
     public void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
         setHasOptionsMenu(true);
+        cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).productDAO().getAll());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -42,16 +40,15 @@ public class CartFragment extends Fragment{
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
-        productList = AppDatabase.getInstance(getContext()).productDAO().getAll();
-        imgClear = view.findViewById(R.id.imgClear);
-        imgClear.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Clear clicked", Toast.LENGTH_SHORT).show();
-        });
+
+        cartRecyclerView = view.findViewById(R.id.recycler_cart);
+        cartRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        cartRecyclerView.setAdapter(cartAdapter);
+
         txtTotal = view.findViewById(R.id.txtTotal);
-        txtTotal.setText(String.format("₫%,d", productList.stream()
+        txtTotal.setText(String.format("₫%,d", cartAdapter.getCart().stream()
                 .map(product -> product.getPrice())
                 .reduce(0, Integer::sum)));
-
         return view;
     }
     @Override

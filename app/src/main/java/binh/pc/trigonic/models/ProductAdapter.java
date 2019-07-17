@@ -31,7 +31,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 .inflate(R.layout.item, parent, false);
         ProductViewHolder productViewHolder = new ProductViewHolder(itemView);
         itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, DetailProductActivity.class);
+            Intent intent = new Intent(parent.getContext(), DetailProductActivity.class);
             intent.putExtra("PRODUCT", productList.get(productViewHolder.getAdapterPosition()));
             context.startActivity(intent);
         });
@@ -52,7 +52,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         holder.image.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailProductActivity.class);
-            intent.putExtra("PRODUCT", productList.get(position));
+            intent.putExtra("PRODUCT", product);
             context.startActivity(intent);
         });
     }
