@@ -1,8 +1,14 @@
 package binh.pc.trigonic.models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName = "Cart")
 public class Product implements Serializable {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private int image;
     private String name;
     private String colors;
@@ -65,5 +71,13 @@ public class Product implements Serializable {
 
     public void setCond(double cond) {
         this.cond = cond;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

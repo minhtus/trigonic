@@ -14,8 +14,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import binh.pc.trigonic.database.AppDatabase;
+import binh.pc.trigonic.models.Product;
+
+import java.util.List;
 
 public class CartFragment extends Fragment{
+    private List<Product> productList;
 
     @Override
     public void onCreate(@Nullable Bundle bundle) {
@@ -30,6 +35,7 @@ public class CartFragment extends Fragment{
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
+        productList = AppDatabase.getInstance(getContext()).productDAO().getAll();
 
         return view;
     }

@@ -5,6 +5,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import binh.pc.trigonic.database.AppDatabase;
 import binh.pc.trigonic.models.Product;
 import com.bumptech.glide.Glide;
 
@@ -46,6 +47,7 @@ public class DetailProductActivity extends AppCompatActivity {
 
         btnAddToCart = findViewById(R.id.btnAddToCart);
         btnAddToCart.setOnClickListener(v -> {
+            AppDatabase.getInstance(this).productDAO().insert(product);
             this.finish();
         });
     }
