@@ -30,7 +30,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item, parent, false);
-        return new ProductViewHolder(itemView);
+        ProductViewHolder productViewHolder = new ProductViewHolder(itemView);
+        itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetailProductActivity.class);
+            intent.putExtra("PRODUCT", productList.get(productViewHolder.getAdapterPosition()));
+            context.startActivity(intent);
+        });
+        return productViewHolder;
     }
 
     @Override
@@ -69,10 +75,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             category = itemView.findViewById(R.id.txtCategory);
             price = itemView.findViewById(R.id.txtPrice);
             cond = itemView.findViewById(R.id.txtCond);
-            image.setOnClickListener(v -> {
-                final Intent intent = new Intent(v.getContext(), DetailProductActivity.class);
-                v.getContext().startActivity(intent);
-            });
         }
     }
 }
