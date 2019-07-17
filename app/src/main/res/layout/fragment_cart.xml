@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/appbarlayout"
-            android:layout_above="@+id/card_coupon"
+            android:layout_above="@+id/card_order"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -39,54 +39,11 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_coupon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/mtrl_card_spacing"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_above="@+id/card_order"
-            >
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="0dip"
-                    android:layout_weight=".75"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:hint="@string/placeholder_coupon"
-                    app:errorEnabled="true"
-                    app:helperTextEnabled="true"
-                    app:startIconDrawable="@drawable/ic_favorite_black_24dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                    android:id="@+id/material_button"
-                    android:layout_weight=".25"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/button_apply"/>
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/mtrl_card_spacing"
+            app:cardElevation="0dp"
             android:clickable="true"
             android:focusable="true"
             android:layout_alignParentBottom="true"
@@ -96,6 +53,38 @@
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dip"
+                        android:layout_weight=".75"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:hint="@string/placeholder_coupon"
+                        app:errorEnabled="true"
+                        app:helperTextEnabled="true"
+                        app:startIconDrawable="@drawable/ic_favorite_black_24dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                        android:id="@+id/material_button"
+                        android:layout_weight=".25"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/button_apply"/>
+            </LinearLayout>
 
             <LinearLayout
                     android:layout_width="match_parent"
