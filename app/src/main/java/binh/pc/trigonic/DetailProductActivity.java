@@ -19,7 +19,7 @@ public class DetailProductActivity extends AppCompatActivity {
     private ImageView image;
     private TextView txtColor;
     private TextView txtCond;
-
+    private Button btnAddToCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,11 @@ public class DetailProductActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(product.getImage())
                 .into(image);
+
+        btnAddToCart = findViewById(R.id.btnAddToCart);
+        btnAddToCart.setOnClickListener(v -> {
+            this.finish();
+        });
     }
 
 }

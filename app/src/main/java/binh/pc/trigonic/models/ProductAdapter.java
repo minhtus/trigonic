@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import binh.pc.trigonic.DetailProductActivity;
@@ -51,7 +50,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 .load(product.getImage())
                 .into(holder.image);
 
-
+        holder.image.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetailProductActivity.class);
+            intent.putExtra("PRODUCT", productList.get(position));
+            context.startActivity(intent);
+        });
     }
 
     @Override
