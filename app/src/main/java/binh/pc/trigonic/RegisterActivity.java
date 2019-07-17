@@ -1,7 +1,7 @@
 package binh.pc.trigonic;
 
 import android.app.DatePickerDialog;
-import android.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, DatePickerDialog.OnDateSetListener{
-    TextView txtBirthday;
+    private TextView txtBirthday;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +38,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         // attaching data adapter to spinner
         country.setAdapter(countryAdapter);
 
-        Spinner gender = (Spinner) findViewById(R.id.gender);
+        Spinner gender = findViewById(R.id.gender);
         gender.setOnItemSelectedListener(this);
-        List<String> genders = new ArrayList<String>();
-        genders.add("MALE");
-        genders.add("FEMALE");
+        List<String> genders = new ArrayList<String>(Arrays.asList("MALE", "FEMALE"));
 
-
-        ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genders);
+        ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, genders);
 
         // Drop down layout style - list view with radio button
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -68,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     }
     public void clickToChooseBirthday(View view) {
         DialogFragment dateFragment = new DatePickerFragment();
-        dateFragment.show(getFragmentManager(),"DatePicker");
+        dateFragment.show(getSupportFragmentManager(),"DatePicker");
     }
 
     @Override

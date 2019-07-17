@@ -20,11 +20,11 @@ public class HomeFragment extends Fragment {
     private int[] carouselImages = {R.drawable.capture, R.drawable.image, R.drawable.img4};
     private CarouselView carouselView;
 
-    ImageListener imageListener = (position, imageView) -> imageView.setImageResource(carouselImages[position]);
+    private ImageListener imageListener = (position, imageView) -> imageView.setImageResource(carouselImages[position]);
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, null);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         carouselView =  view.findViewById(R.id.carouselView);
         carouselView.setPageCount(carouselImages.length);
         carouselView.setImageListener(imageListener);

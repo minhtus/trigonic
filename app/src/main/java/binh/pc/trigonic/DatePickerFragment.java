@@ -3,7 +3,7 @@ package binh.pc.trigonic;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,7 +22,7 @@ public class DatePickerFragment extends DialogFragment {
         final Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR) - 18;
         int month = cal.get(Calendar.MONTH);
-        int day = cal.get(android.icu.util.Calendar.DAY_OF_MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
         return new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener) getActivity(), year, month, day);
     }
 }

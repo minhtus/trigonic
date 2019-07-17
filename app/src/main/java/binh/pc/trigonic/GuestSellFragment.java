@@ -1,5 +1,6 @@
 package binh.pc.trigonic;
 
+import android.content.Intent;
 import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +24,12 @@ public class GuestSellFragment extends Fragment {
         btnLogin = view.findViewById(R.id.btnLogin);
         btnRegister = view.findViewById(R.id.btnRegister);
         btnLogin.setOnClickListener((click) -> {
-            Toast.makeText(getContext(), "Login clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            startActivityForResult(intent, 1);
         });
         btnRegister.setOnClickListener((click) -> {
-            Toast.makeText(getContext(), "Register clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), RegisterActivity.class);
+            startActivity(intent);
         });
         return view;
     }

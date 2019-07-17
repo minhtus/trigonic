@@ -1,13 +1,13 @@
 package binh.pc.trigonic;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-
-import android.os.Bundle;
-
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     break;
                 case R.id.action_sell:
-                    fragment = new GuestSellFragment();
+                    SharedPreferences sharedPreferences =
+                            getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
+                    boolean logged = sharedPreferences.getBoolean(getString(R.string.login_shared_prefs), false);
+                    fragment = logged ? new LoggedSellFragment() : new GuestSellFragment();
                     break;
                 case R.id.action_cart:
                     fragment = new CartFragment();
@@ -37,7 +40,19 @@ public class MainActivity extends AppCompatActivity {
             return loadFragment(fragment);
         });
 
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case 1:
+                SharedPreferences sharedPreferences =
+                        getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
+                boolean logged = sharedPreferences.getBoolean(getString(R.string.login_shared_prefs), false);
+                fragment = logged ? new LoggedSellFragment() : new GuestSellFragment();
+                loadFragment(fragment);
+        }
     }
 
     private boolean loadFragment(Fragment fragment){

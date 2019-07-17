@@ -65,7 +65,8 @@
                       android:paddingLeft="20dp"
                     />
 
-            <Button android:layout_width="match_parent"
+            <Button android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="20dp"
@@ -108,52 +109,6 @@
                         />
             </LinearLayout>
 
-
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:background="@drawable/support"
-                    android:height="100dp"
-                    android:textColor="#ff3333"/>
-
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:orientation="vertical"
-                    android:background="#1B1B1B">
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:height="300dp"
-
-                        android:drawableTop="@drawable/logomain"
-
-                        android:drawableBottom="@drawable/line1"
-                        android:paddingTop="60dp"
-                        />
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:text="2019 Ⓒ Trigonic. All rights reserved"
-                        android:gravity="center"
-                        android:textColor="#fff"
-                        android:textSize="10dp"
-                        />
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:text="With love from Trigonic"
-                        android:gravity="center"
-                        android:textColor="#fff"
-                        android:textSize="10dp"
-                        />
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
