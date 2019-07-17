@@ -1,7 +1,11 @@
 package binh.pc.trigonic;
 
+import android.os.Build;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -21,6 +25,8 @@ import java.util.List;
 
 public class CartFragment extends Fragment{
     private List<Product> productList;
+    private ImageView imgClear;
+    TextView txtTotal;
 
     @Override
     public void onCreate(@Nullable Bundle bundle) {
@@ -28,6 +34,7 @@ public class CartFragment extends Fragment{
         setHasOptionsMenu(true);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
     @Override
     public View onCreateView( LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
@@ -36,6 +43,14 @@ public class CartFragment extends Fragment{
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
         productList = AppDatabase.getInstance(getContext()).productDAO().getAll();
+        imgClear = view.findViewById(R.id.imgClear);
+        imgClear.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Clear clicked", Toast.LENGTH_SHORT).show();
+        });
+        txtTotal = view.findViewById(R.id.txtTotal);
+        txtTotal.setText(String.format("₫%,d", productList.stream()
+                .map(product -> product.getPrice())
+                .reduce(0, Integer::sum)));
 
         return view;
     }

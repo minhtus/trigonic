@@ -8,106 +8,183 @@
                 android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        app:liftOnScroll="true">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            style="?attr/catalogToolbarWithCloseButtonStyle"
+            android:id="@+id/appbarlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:buttonGravity="center_vertical"
-            app:title="Cart"
-            app:titleTextColor="@color/cardview_light_background" />
+            android:fitsSystemWindows="true"
+            app:liftOnScroll="true">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="?attr/catalogToolbarWithCloseButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:buttonGravity="center_vertical"
+                app:title="Cart"
+                app:titleTextColor="@color/cardview_light_background"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/appbarlayout"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="8dp">
+            android:layout_below="@+id/appbarlayout"
+            android:layout_above="@+id/card_coupon"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="8dp">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/mtrl_card_spacing"
-                android:clickable="true"
-                android:focusable="true">
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_margin="@dimen/mtrl_card_spacing"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="right"
-                        android:contentDescription="Cart Image"
-                        app:srcCompat="@drawable/ic_clear_black_24dp" />
-
-                    <LinearLayout
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-15dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:paddingBottom="8dp">
+                        android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="right"
+                            android:contentDescription="Cart Image"
+                            app:srcCompat="@drawable/ic_clear_black_24dp"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-15dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="8dp">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="8dp"
-                            android:layout_weight="1.0"
-                            android:orientation="vertical"
-                            android:paddingTop="8dp">
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1.0"
+                                android:orientation="vertical"
+                                android:paddingTop="8dp">
 
                             <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="Cart Tittle"
+                                    android:text="Jordan Proto-Max 720"
+                                    android:textColor="@color/vpi__background_holo_dark"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Cond 9.0 - Verify by Trigonic"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="₫1.200.000"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"/>
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="80dp"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="15dp"
+                                android:contentDescription="Cart Image"
+                                app:srcCompat="@drawable/jpm720"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/mtrl_card_spacing"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="16dp"
+                            android:paddingBottom="8dp"
+                            android:orientation="vertical"
+                            >
+
+                        <TextView
+                                android:id="@+id/txtName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:contentDescription="Cart Tittle"
                                 android:text="Jordan Proto-Max 720"
                                 android:textColor="@color/vpi__background_holo_dark"
-                                android:textSize="17dp"
-                                android:textStyle="bold" />
+                                android:textSize="17sp"
+                                android:textStyle="bold"/>
 
-                            <TextView
+                        <TextView
+                                android:id="@+id/txtCond"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:ellipsize="end"
                                 android:maxLines="2"
-                                android:text="Cond 9.0 - Verify by Trigonic" />
+                                android:text="Cond 9.0 - Verify by Trigonic"/>
 
-                            <TextView
+                        <TextView
+                                android:id="@+id/txtPrice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:ellipsize="end"
                                 android:maxLines="2"
                                 android:text="₫1.200.000"
-                                android:textSize="15dp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                                android:textSize="15sp"
+                                android:textStyle="bold"/>
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="80dp"
-                            android:layout_height="100dp"
-                            android:layout_marginRight="15dp"
-                            android:contentDescription="Cart Image"
-                            app:srcCompat="@drawable/jpm720" />
+
                     </LinearLayout>
 
-                </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="Cart Image"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/jpm720"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgClear"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="end"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_clear_black_24dp"/>
+
+                </RelativeLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -120,67 +197,67 @@
                     >
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="right"
-                        android:contentDescription="Cart Image"
-                        app:srcCompat="@drawable/ic_clear_black_24dp" />
-
-                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-15dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:paddingBottom="8dp">
+                        android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="right"
+                            android:contentDescription="Cart Image"
+                            app:srcCompat="@drawable/ic_clear_black_24dp"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-15dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="8dp">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="8dp"
-                            android:layout_weight="1.0"
-                            android:orientation="vertical"
-                            android:paddingTop="8dp">
-
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:contentDescription="Cart Tittle"
-                                android:text="Nike React Element 55"
-                                android:textColor="@color/vpi__background_holo_dark"
-                                android:textSize="17dp"
-                                android:textStyle="bold" />
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1.0"
+                                android:orientation="vertical"
+                                android:paddingTop="8dp">
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:ellipsize="end"
-                                android:maxLines="2"
-                                android:text="Cond 8.5 - Verify by Trigonic" />
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="Cart Tittle"
+                                    android:text="Nike React Element 55"
+                                    android:textColor="@color/vpi__background_holo_dark"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"/>
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:ellipsize="end"
-                                android:maxLines="2"
-                                android:text="₫3.400.000"
-                                android:textSize="15dp"
-                                android:textStyle="bold" />
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Cond 8.5 - Verify by Trigonic"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="₫3.400.000"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"/>
                         </LinearLayout>
 
                         <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="80dp"
-                            android:layout_height="100dp"
-                            android:layout_marginRight="15dp"
-                            android:contentDescription="Cart Image"
-                            app:srcCompat="@drawable/aj14rse" />
+                                android:layout_width="80dp"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="15dp"
+                                android:contentDescription="Cart Image"
+                                app:srcCompat="@drawable/aj14rse"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -212,8 +289,7 @@
                     android:layout_weight=".75"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:hint="Coupon"
-                    app:counterEnabled="true"
+                    android:hint="@string/placeholder_coupon"
                     app:errorEnabled="true"
                     app:helperTextEnabled="true"
                     app:startIconDrawable="@drawable/ic_favorite_black_24dp">
@@ -231,7 +307,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Apply"/>
+                    android:text="@string/button_apply"/>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -260,35 +336,36 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
-                        android:layout_gravity="top|left"
-                        android:textSize="16dp"
-                        android:text="Total"/>
+                        android:layout_gravity="top|start"
+                        android:textSize="16sp"
+                        android:text="@string/title_Total"/>
 
                 <TextView
+                        android:id="@+id/txtTotal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
-                        android:gravity="right"
-                        android:textSize="18dp"
+                        android:gravity="end"
+                        android:textSize="18sp"
                         android:textColor="#8B0000"
                         android:textStyle="bold"
-                        android:text="₫5.400.000"/>
+                        />
             </LinearLayout>
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Included the cost of shoe check"/>
+                    android:text="@string/text_include_cost"/>
 
             <Button
                     android:id="@+id/material_button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Proceed to order"/>
+                    android:text="@string/button_proceed_order"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>
