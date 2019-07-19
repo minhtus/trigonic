@@ -65,20 +65,20 @@ public class PopularFragment extends Fragment {
 
     private void fetchProducts() {
         // TODO Data input for popular tab is here
-        Product p1 = new Product(R.drawable.jpm720, "Jordan Proto-Max 720", "Black/Red", "Men", 8500000, 8);
-        Product p2 = new Product(R.drawable.nre55, "Nike React Element 55", "White/Yellow", "Men", 7800000, 8);
-        Product p3 = new Product(R.drawable.ncracp, "Nike Court Royal Acp", "White/Blue", "Men", 7600000, 8.5);
-        Product p4 = new Product(R.drawable.ncclxf, "Nike Classic Cortez xf", "White/Red", "Men", 9200000, 9.5);
-        Product p5 = new Product(R.drawable.aj14rse, "Air jordan 14", "Yellow", "Men", 9520000, 9.5);
-        Product p6 = new Product(R.drawable.ajxxxii, "Air jordan XXXII", "Black/Red", "Men", 9850000, 9.5);
-        Product p7 = new Product(R.drawable.aj1rls, "Air jordan 1 low slip", "White/Red", "Men", 9000000, 8);
-        Product p8 = new Product(R.drawable.aj1rhp, "Air jordan Travis Scott", "Blue/Red", "Men", 9200000, 8.5);
-        Product p9 = new Product(R.drawable.namff720, "Nike Air max FF 720", "Black", "Men", 7600000, 8.5);
-        Product p10 = new Product(R.drawable.nam90, "Nike Air max 90", "Black/White", "Men", 8500000, 9.5);
-        Product p11 = new Product(R.drawable.nam270, "Nike Air max 270", "White", "Men", 7860000, 8);
-        Product p12 = new Product(R.drawable.nam270r, "Nike Air max 270 React", "Black/White", "Men", 7590000, 7.5);
-        Product p13 = new Product(R.drawable.namiv, "Nike Air max Tailwind", "Black/White", "Men", 8940000, 9);
-        Product p14 = new Product(R.drawable.nabm, "Nike Air max BM", "Black/White", "Men", 9580000, 8.5);
+        Product p1 = new Product(R.drawable.jpm720, "Jordan Proto-Max 720", "Black/Red", "Men", 8500000, 42, "Nike", 8);
+        Product p2 = new Product(R.drawable.nre55, "Nike React Element 55", "White/Yellow", "Men", 7800000, 41.5, "Nike", 8);
+        Product p3 = new Product(R.drawable.ncracp, "Nike Court Royal Acp", "White/Blue", "Men", 7600000, 42, "Nike", 8.5);
+        Product p4 = new Product(R.drawable.ncclxf, "Nike Classic Cortez xf", "White/Red", "Men", 9200000, 40, "Nike", 9.5);
+        Product p5 = new Product(R.drawable.aj14rse, "Air jordan 14", "Yellow", "Men", 9520000, 42, "Nike",9.5);
+        Product p6 = new Product(R.drawable.ajxxxii, "Air jordan XXXII", "Black/Red", "Men", 9850000, 42, "Nike",9.5);
+        Product p7 = new Product(R.drawable.aj1rls, "Air jordan 1 low slip", "White/Red", "Men", 9000000, 40, "Nike",8);
+        Product p8 = new Product(R.drawable.aj1rhp, "Air jordan Travis Scott", "Blue/Red", "Men", 9200000, 41, "Nike",8.5);
+        Product p9 = new Product(R.drawable.namff720, "Nike Air max FF 720", "Black", "Men", 7600000, 43.2, "Nike",8.5);
+        Product p10 = new Product(R.drawable.nam90, "Nike Air max 90", "Black/White", "Men", 8500000, 44, "Nike",9.5);
+        Product p11 = new Product(R.drawable.nam270, "Nike Air max 270", "White", "Men", 7860000, 41.7, "Nike",8);
+        Product p12 = new Product(R.drawable.nam270r, "Nike Air max 270 React", "Black/White", "Men", 7590000, 42.3, "Nike",7.5);
+        Product p13 = new Product(R.drawable.namiv, "Nike Air max Tailwind", "Black/White", "Men", 8940000, 41, "Nike",9);
+        Product p14 = new Product(R.drawable.nabm, "Nike Air max BM", "Black/White", "Men", 9580000, 39, "Nike",8.5);
         outstandingList = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5));
         airJordanList = new ArrayList<>(Arrays.asList(p5, p6, p7, p8));
         nikeAirList = new ArrayList<>(Arrays.asList(p9, p10, p11, p12, p13, p14));

@@ -9,6 +9,8 @@ import binh.pc.trigonic.database.AppDatabase;
 import binh.pc.trigonic.models.Product;
 import com.bumptech.glide.Glide;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class DetailProductActivity extends AppCompatActivity {
     private ImageView image;
     private TextView txtColor;
     private TextView txtCond;
+    private TextView txtSize;
     private Button btnAddToCart;
 
     @Override
@@ -38,8 +41,11 @@ public class DetailProductActivity extends AppCompatActivity {
         txtName.setText(product.getName());
         txtColor = findViewById(R.id.txtColor);
         txtColor.setText(String.format("Colors: %s", product.getColors()));
+        NumberFormat nf = new DecimalFormat("#.#");
         txtCond = findViewById(R.id.txtCond);
-        txtCond.setText(String.format("Cond: %.1f", product.getCond()));
+        txtCond.setText(String.format("Cond: %s", nf.format(product.getCond())));
+        txtSize = findViewById(R.id.txtSize);
+        txtSize.setText(String.format("Size: %s", nf.format(product.getSize())));
         image = findViewById(R.id.image);
         Glide.with(this)
                 .load(product.getImage())

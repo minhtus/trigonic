@@ -1,6 +1,7 @@
 package binh.pc.trigonic.models;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -14,14 +15,28 @@ public class Product implements Serializable {
     private String colors;
     private String category;
     private int price;
+    private double size;
+    private String branch;
     private double cond;
 
+    @Ignore
     public Product(int image, String name, String colors, String category, int price, double cond) {
         this.image = image;
         this.name = name;
         this.colors = colors;
         this.category = category;
         this.price = price;
+        this.cond = cond;
+    }
+
+    public Product(int image, String name, String colors, String category, int price, double size, String branch, double cond) {
+        this.image = image;
+        this.name = name;
+        this.colors = colors;
+        this.category = category;
+        this.price = price;
+        this.size = size;
+        this.branch = branch;
         this.cond = cond;
     }
 
@@ -79,5 +94,21 @@ public class Product implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
     }
 }
