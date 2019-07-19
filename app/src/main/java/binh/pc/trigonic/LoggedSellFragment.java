@@ -1,12 +1,20 @@
 package binh.pc.trigonic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import binh.pc.trigonic.models.ImageAdapter;
+import com.esafirm.imagepicker.features.ImagePicker;
+import com.esafirm.imagepicker.model.Image;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -30,7 +38,10 @@ public class LoggedSellFragment extends Fragment implements AdapterView.OnItemSe
     private EditText editPrice;
     private TextView txtTax;
     private TextView txtTruePrice;
+    private Button btnAddPhotos;
 
+    private RecyclerView imageRecyclerView;
+    private ImageAdapter imageAdapter;
 
     public LoggedSellFragment() {
         // Required empty public constructor
@@ -46,12 +57,22 @@ public class LoggedSellFragment extends Fragment implements AdapterView.OnItemSe
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_logged_sell, container, false);
-        editProduct = view.findViewById(R.id.editProduct);
-        editCondition = view.findViewById(R.id.editCondition);
-        editSize = view.findViewById(R.id.editSize);
-        editPrice = view.findViewById(R.id.editPrice);
-        txtTax = view.findViewById(R.id.txtTax);
-        txtTruePrice = view.findViewById(R.id.txtTruePrice);
+        imageRecyclerView = view.findViewById(R.id.recycler_images);
+        imageRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+//        editProduct = view.findViewById(R.id.editProduct);
+//        editCondition = view.findViewById(R.id.editCondition);
+//        editSize = view.findViewById(R.id.editSize);
+//        editPrice = view.findViewById(R.id.editPrice);
+//        txtTax = view.findViewById(R.id.txtTax);
+//        txtTruePrice = view.findViewById(R.id.txtTruePrice);
+
+        btnAddPhotos = view.findViewById(R.id.btnAddPhotos);
+        btnAddPhotos.setOnClickListener(v -> {
+            ImagePicker.create(this)
+                    .limit(4)
+                    .toolbarImageTitle("Hình ảnh cho sản phẩm")
+                    .start();
+        });
 
         List<String> brandLists = new ArrayList<>(Arrays.asList("Adidas", "Alexander McQueen", "Balenciaga",
                 "Balmain", "Boss Hugo Boss", "Bulgari", "Burberry", "Cartier", "Dior", "Dolce & Gabbana",
@@ -109,6 +130,16 @@ public class LoggedSellFragment extends Fragment implements AdapterView.OnItemSe
 
         });
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
+            List<Image> pickedImages = ImagePicker.getImages(data);
+            imageAdapter = new ImageAdapter(getContext(), pickedImages);
+            imageRecyclerView.setAdapter(imageAdapter);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

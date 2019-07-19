@@ -30,7 +30,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item, parent, false);
+                .inflate(R.layout.product_item, parent, false);
         ProductViewHolder productViewHolder = new ProductViewHolder(itemView);
         itemView.setOnClickListener(v -> {
             Intent intent = new Intent(parent.getContext(), DetailProductActivity.class);
