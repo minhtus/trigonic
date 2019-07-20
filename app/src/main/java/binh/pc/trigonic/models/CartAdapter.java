@@ -39,7 +39,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         final Product cartItem = cart.get(position);
         holder.txtName.setText(cartItem.getName());
-        holder.txtCond.setText(String.format("Cond %.1f - Verify by Trigonic", cartItem.getCond()));
+        holder.txtCond.setText(String.format("Tình trạng %.1f - Verify by Trigonic", cartItem.getCond()));
         holder.txtPrice.setText(String.format("₫%,d", cartItem.getPrice()));
         holder.imgClear.setOnClickListener(v -> {
             AppDatabase.getInstance(context).productDAO().delete(cartItem);

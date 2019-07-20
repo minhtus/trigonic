@@ -16,7 +16,7 @@
             android:textColor="#000"
             android:fontFamily="stencil"
             android:layout_marginStart="5dp"
-            android:text="Trending"
+            android:text="Xu hướng"
             android:height="50dp"
             />
 
