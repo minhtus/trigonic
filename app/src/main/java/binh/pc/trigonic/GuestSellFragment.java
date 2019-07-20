@@ -28,7 +28,7 @@ public class GuestSellFragment extends Fragment {
         btnRegister.setOnClickListener((click) -> {
             Intent intent = new Intent(getActivity(), LoginRegisterActivity.class);
             intent.putExtra("FRAGMENT", 1);
-            getActivity().startActivityForResult(intent, 2);
+            startActivity(intent);
         });
         return view;
     }
