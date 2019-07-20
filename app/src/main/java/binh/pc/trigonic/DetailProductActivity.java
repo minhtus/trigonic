@@ -44,10 +44,10 @@ public class DetailProductActivity extends AppCompatActivity {
         txtName = findViewById(R.id.txtName);
         txtName.setText(product.getName());
         txtColor = findViewById(R.id.txtColor);
-        txtColor.setText(String.format("Colors: %s", product.getColors()));
+        txtColor.setText(String.format("Màu: %s", product.getColors()));
         NumberFormat nf = new DecimalFormat("#.#");
         txtCond = findViewById(R.id.txtCond);
-        txtCond.setText(String.format("Cond: %s", nf.format(product.getCond())));
+        txtCond.setText(String.format("Tình trạng: %s/10", nf.format(product.getCond())));
         txtSize = findViewById(R.id.txtSize);
         txtSize.setText(String.format("Size: %s", nf.format(product.getSize())));
         image = findViewById(R.id.image);
