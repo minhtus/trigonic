@@ -54,28 +54,22 @@
                         />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:hint="@string/text_branch"
                     >
 
-                <TextView
-                        android:layout_width="130dp"
+                <AutoCompleteTextView
+                        android:id="@+id/edtBranch"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_branch"
-                        android:layout_marginTop="5dp"
-                        android:textSize="25sp"
-                        android:textColor="#000000"
+                        android:editable="false"
                         />
 
-                <Spinner
-                        android:layout_width="280dp"
-                        android:layout_height="45dp"
-                        android:id="@+id/brand"
-                        >
-                </Spinner>
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -140,10 +134,26 @@
                         />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                    android:id="@+id/txtFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    />
+
+            <TextView
+                    android:id="@+id/txtRealPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    />
+
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
                     android:text="@string/button_submit_product"
                     />
         </LinearLayout>

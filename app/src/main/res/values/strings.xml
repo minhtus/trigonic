@@ -28,7 +28,7 @@
     <string name="text_product_name">Tên sản phẩm</string>
     <string name="text_condition">Tình trạng</string>
     <string name="text_fee">Chi Phí</string>
-    <string name="button_submit_product">Đăng bán sản phẩm</string>
+    <string name="button_submit_product">Đăng bán</string>
     <string name="button_add_photos">thêm ảnh</string>
     <string name="placeholder_product_name">Tên sản phẩm</string>
     <string name="placeholder_condition">Tình trạng</string>

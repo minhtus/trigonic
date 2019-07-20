@@ -46,11 +46,8 @@ public class CartFragment extends Fragment{
 
         txtTotal = view.findViewById(R.id.txtTotal);
         txtTotal.setText(String.format("₫%,d", cartAdapter.getCart().stream()
-                .map(product -> product.getPrice())
+                .map(Product::getPrice)
                 .reduce(0, Integer::sum)));
         return view;
     }
-
-
-
 }

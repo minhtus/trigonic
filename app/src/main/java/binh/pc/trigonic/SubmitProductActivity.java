@@ -3,6 +3,7 @@ package binh.pc.trigonic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +14,7 @@ import binh.pc.trigonic.models.ImageAdapter;
 import com.esafirm.imagepicker.model.Image;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class SubmitProductActivity extends AppCompatActivity {
     private EditText edtName;
@@ -25,6 +24,8 @@ public class SubmitProductActivity extends AppCompatActivity {
     private RecyclerView imageRecyclerView;
     private ImageAdapter imageAdapter;
     private Button btnSubmit;
+    private AutoCompleteTextView edtBranch;
+    private static final String TAG = "SubmitProductActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +55,11 @@ public class SubmitProductActivity extends AppCompatActivity {
                 "Rick Owen", "Supreme", "The North Face (TNF)", "Thom Browne", "Tom Ford", "Vans",
                 "Venyx", "Versace", "Vogue", "Valentino"));
 
-        Spinner brand = findViewById(R.id.brand);
+
         ArrayAdapter<String> brandAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, brandLists);
         brandAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        brand.setAdapter(brandAdapter);
+        edtBranch = findViewById(R.id.edtBranch);
+        edtBranch.setAdapter(brandAdapter);
 
         btnSubmit = findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(v -> {
@@ -81,19 +83,19 @@ public class SubmitProductActivity extends AppCompatActivity {
                 truePrice = (price*1)/100 + price;
             }
 
-//
-//            Map<String,Object> products = new HashMap<>();
-//            products.put("Brand", "Nike");
-//            products.put("Product", productName);
-//            products.put("Condition", condition);
-//            products.put("Size", size);
-//            products.put("Your Price", price);
-//            products.put("Tax", tax);
-//            products.put("Price", truePrice);
-//
-//            db.collection("CusProduct").add(products)
-//                    .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
-//                    .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+
+            Map<String,Object> products = new HashMap<>();
+            products.put("Brand", "Nike");
+            products.put("Product", productName);
+            products.put("Condition", condition);
+            products.put("Size", size);
+            products.put("Your Price", price);
+            products.put("Tax", tax);
+            products.put("Price", truePrice);
+
+            db.collection("CusProduct").add(products)
+                    .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
+                    .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
 
         });
     }
