@@ -23,4 +23,7 @@
     <string name="title_Total">Total</string>
     <string name="text_include_cost">Included the cost of shoe check</string>
     <string name="button_proceed_order">Proceed to order</string>
+    <string name="TAB_PROFILE_NAME">Thông Tin</string>
+    <string name="PROFILE_TITLE">Chào Mừng Bạn Đến Với Trigonic</string>
+    <string name="PROFILE_TITLE2">Đăng Nhập/Đăng Kí</string>
 </resources>
