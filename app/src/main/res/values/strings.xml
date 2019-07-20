@@ -37,4 +37,7 @@
     <string name="placeholder_price">Price</string>
     <string name="image_picker_toolbar_title">Hình ảnh cho sản phẩm</string>
     <string name="description_selling">Đăng bán bằng cách thêm hình ảnh sản phẩm của bạn</string>
+    <string name="TAB_PROFILE_NAME">Thông Tin</string>
+    <string name="PROFILE_TITLE">Chào Mừng Bạn Đến Với Trigonic</string>
+    <string name="PROFILE_TITLE2">Đăng Nhập/Đăng Kí</string>
 </resources>
