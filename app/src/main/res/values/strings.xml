@@ -35,4 +35,6 @@
     <string name="placeholder_condition">Condition</string>
     <string name="placeholder_size">Size</string>
     <string name="placeholder_price">Price</string>
+    <string name="image_picker_toolbar_title">Hình ảnh cho sản phẩm</string>
+    <string name="description_selling">Đăng bán bằng cách thêm hình ảnh sản phẩm của bạn</string>
 </resources>

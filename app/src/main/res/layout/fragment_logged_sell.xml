@@ -1,203 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                                       xmlns:tools="http://schemas.android.com/tools"
-                                       android:layout_width="match_parent"
-                                       android:layout_height="match_parent"
-                                       xmlns:app="http://schemas.android.com/apk/res-auto"
-                                       android:orientation="vertical"
-                                       tools:context=".LoggedSellFragment">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     tools:context=".LoggedSellFragment">
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description_selling"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            />
 
-        <TextView
-                android:id="@+id/txtTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_submit_product"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:layout_marginTop="10dp"
-                android:layout_alignParentTop="true"
-                />
+    <ImageButton
+            android:id="@+id/btnAddPhotos"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_add_a_photo_black_24dp"
+            android:layout_gravity="center"
+            />
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_below="@+id/txtTitle"
-                >
-
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_images"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="horizontal"
-                    />
-
-            <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Design.TextInputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:hint="@string/placeholder_product_name"
-                    app:errorEnabled="true"
-                    >
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    >
-
-                <TextView
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_branch"
-                        android:layout_marginTop="5dp"
-                        android:textSize="25sp"
-                        android:textColor="#000000"
-                        />
-
-                <Spinner
-                        android:layout_width="280dp"
-                        android:layout_height="45dp"
-                        android:id="@+id/brand"
-                        >
-                </Spinner>
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Design.TextInputLayout"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".5"
-                        android:layout_margin="4dp"
-                        android:hint="@string/placeholder_condition"
-                        app:errorEnabled="true"
-                        >
-
-                    <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edtCondition"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="numberDecimal|numberSigned"
-                            />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Design.TextInputLayout"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".5"
-                        android:layout_margin="4dp"
-                        android:hint="@string/placeholder_size"
-                        app:errorEnabled="true"
-                        >
-
-                    <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edtSize"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="numberDecimal|numberSigned"
-                            />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:hint="@string/placeholder_price"
-                    app:errorEnabled="true"
-                    >
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtPrice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textAlignment="textEnd"
-                        />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
-
-                <TextView
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_fee"
-                        android:layout_marginTop="5dp"
-                        android:textSize="25sp"
-                        android:textColor="#000000"
-                        />
-
-                <TextView
-                        android:id="@+id/txtTax"
-                        android:layout_width="280dp"
-                        android:layout_height="45dp"
-                        >
-
-                </TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
-
-                <TextView
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:text="Price :"
-                        android:layout_marginTop="5dp"
-                        android:textSize="25sp"
-                        android:textColor="#000000"
-                        />
-
-                <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="45dp"
-                        android:id="@+id/txtTruePrice"
-                        >
-                </TextView>
-            </LinearLayout>
-
-            <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAddPhotos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_add_photos"
-                    />
-
-
-            <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_submit_product"
-                    />
-        </LinearLayout>
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
