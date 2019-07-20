@@ -7,7 +7,7 @@
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginRegisterActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -15,7 +15,7 @@
         app:boxBackgroundColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Họ Tên"
+        android:hint="@string/placeholder_name"
         app:endIconMode="clear_text"
         app:errorEnabled="true">
 
@@ -29,7 +29,7 @@
         app:boxBackgroundColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Số điện thoại"
+        android:hint="@string/placeholder_phone"
         app:endIconMode="clear_text"
         app:errorEnabled="true">
 
@@ -43,7 +43,7 @@
         app:boxBackgroundColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/placeholder_email"
         app:endIconMode="clear_text"
         app:errorEnabled="true">
 
@@ -57,7 +57,7 @@
         app:boxBackgroundColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mật Khẩu"
+        android:hint="@string/placeholder_password"
         app:endIconMode="password_toggle"
         app:errorEnabled="true">
 
@@ -71,7 +71,7 @@
         app:boxBackgroundColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập lại Mật Khẩu"
+        android:hint="@string/placeholder_repassword"
         app:endIconMode="password_toggle"
         app:errorEnabled="true">
 
@@ -81,8 +81,8 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đăng Kí"/>
+        android:text="@string/button_register"/>
 </LinearLayout>

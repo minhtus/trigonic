@@ -7,10 +7,9 @@
     <string name="title_popular">Popular</string>
     <string name="title_men">Men</string>
     <string name="title_women">Women</string>
-    <string name="button_login">LOG IN</string>
-    <string name="button_register">REGISTER</string>
+    <string name="button_login">Đăng nhập</string>
+    <string name="button_register">Đăng ký</string>
     <string name="quote_sell">Apply to sell by logging in or registering. Only approved sellers are allowed to participate in selling</string>
-    <string name="title_activity_login">LoginActivity</string>
     <string name="login_shared_prefs">logged</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -40,4 +39,9 @@
     <string name="TAB_PROFILE_NAME">Thông Tin</string>
     <string name="PROFILE_TITLE">Chào Mừng Bạn Đến Với Trigonic</string>
     <string name="PROFILE_TITLE2">Đăng Nhập/Đăng Kí</string>
+    <string name="placeholder_password">Mật Khẩu</string>
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_name">Họ và Tên</string>
+    <string name="placeholder_phone">Số điện thoại</string>
+    <string name="placeholder_repassword">Nhập lại Mật Khẩu</string>
 </resources>

@@ -39,17 +39,17 @@
             app:tabIndicatorColor="?colorPrimary"
             >
             <com.google.android.material.tabs.TabItem
-                android:text="Đăng nhập"
+                android:text="@string/button_login"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"/>
             <com.google.android.material.tabs.TabItem
-                android:text="Đăng Kí"
+                android:text="@string/button_register"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"/>
         </com.google.android.material.tabs.TabLayout>
 
         <FrameLayout
-            android:id="@+id/fragment_product_container"
+            android:id="@+id/login_register_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

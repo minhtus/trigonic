@@ -11,9 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GuestSellFragment extends Fragment {
     private Button btnLogin;
     private Button btnRegister;
@@ -24,12 +21,14 @@ public class GuestSellFragment extends Fragment {
         btnLogin = view.findViewById(R.id.btnLogin);
         btnRegister = view.findViewById(R.id.btnRegister);
         btnLogin.setOnClickListener((click) -> {
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            Intent intent = new Intent(getActivity(), LoginRegisterActivity.class);
+            intent.putExtra("FRAGMENT", 0);
             getActivity().startActivityForResult(intent, 1);
         });
         btnRegister.setOnClickListener((click) -> {
-            Intent intent = new Intent(getActivity(), RegisterActivity.class);
-            startActivity(intent);
+            Intent intent = new Intent(getActivity(), LoginRegisterActivity.class);
+            intent.putExtra("FRAGMENT", 1);
+            getActivity().startActivityForResult(intent, 2);
         });
         return view;
     }

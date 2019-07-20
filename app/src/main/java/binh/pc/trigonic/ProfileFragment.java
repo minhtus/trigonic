@@ -17,7 +17,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -41,7 +40,7 @@ public class ProfileFragment extends Fragment{
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getContext(),LoginActivity.class);
+                Intent intent= new Intent(getContext(), LoginRegisterActivity.class);
                 startActivity(intent);
             }
         });
