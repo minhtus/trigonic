@@ -11,29 +11,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appbarlayout"
+        <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.Surface"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fitsSystemWindows="true"
-                app:liftOnScroll="true">
-
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:buttonGravity="center_vertical"
-                    app:title="Submit Product"
-                    android:background="@color/colorAccent"
-                    app:titleTextColor="@color/colorPrimary"
-                    />
-        </com.google.android.material.appbar.AppBarLayout>
+                android:layout_alignParentTop="true"
+                android:elevation="4dp"
+                app:title="@string/title_submit_product"
+                />
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_below="@+id/appbarlayout"
+                android:layout_below="@+id/toolbar"
                 >
 
             <androidx.recyclerview.widget.RecyclerView

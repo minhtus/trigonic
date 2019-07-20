@@ -7,22 +7,20 @@
                 android:orientation="vertical"
                 tools:context=".DetailProductActivity">
 
-    <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:scaleType="fitXY"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/ic_arrow_back_black_24dp"
+    <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            app:title="@string/title_product_detail"
             />
 
     <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_below="@+id/imgBack"
+            android:layout_below="@+id/toolbar"
             android:layout_above="@+id/btnAddToCart"
             >
 

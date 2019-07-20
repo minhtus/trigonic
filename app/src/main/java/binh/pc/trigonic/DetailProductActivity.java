@@ -5,6 +5,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import androidx.appcompat.widget.Toolbar;
 import binh.pc.trigonic.database.AppDatabase;
 import binh.pc.trigonic.models.Product;
 import com.bumptech.glide.Glide;
@@ -29,8 +30,11 @@ public class DetailProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
-        back = findViewById(R.id.imgBack);
-        back.setOnClickListener(v -> this.finish());
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> this.finish());
+
         Intent intent = this.getIntent();
         Product product = (Product) intent.getSerializableExtra("PRODUCT");
         txtCategory = findViewById(R.id.txtCategory);

@@ -7,27 +7,19 @@
                 android:fitsSystemWindows="true"
                 android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-    android:id="@+id/appbarlayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fitsSystemWindows="true"
-    app:liftOnScroll="true">
-
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                style="?attr/catalogToolbarWithCloseButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:buttonGravity="center_vertical"
-                app:title="Cart"
-                app:titleTextColor="@color/cardview_light_background"/>
-    </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            app:title="@string/title_cart"
+            />
 
     <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/appbarlayout"
+            android:layout_below="@+id/toolbar"
             android:layout_above="@+id/card_order"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 

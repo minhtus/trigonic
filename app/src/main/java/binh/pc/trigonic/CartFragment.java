@@ -28,7 +28,6 @@ public class CartFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
-        setHasOptionsMenu(true);
         cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).productDAO().getAll());
     }
 
@@ -51,16 +50,7 @@ public class CartFragment extends Fragment{
                 .reduce(0, Integer::sum)));
         return view;
     }
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
-        menuInflater.inflate(R.menu.topbar, menu);
-        super.onCreateOptionsMenu(menu, menuInflater);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(getContext(), "selected", Toast.LENGTH_SHORT).show();
-        return true;
-    }
+
 
 }

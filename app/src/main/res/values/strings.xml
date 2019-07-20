@@ -44,4 +44,6 @@
     <string name="placeholder_name">Họ và Tên</string>
     <string name="placeholder_phone">Số điện thoại</string>
     <string name="placeholder_repassword">Nhập lại Mật Khẩu</string>
+    <string name="button_logout">Đăng Xuất</string>
+    <string name="title_product_detail">Chi tiết sản phẩm</string>
 </resources>

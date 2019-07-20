@@ -32,17 +32,14 @@ public class ProfileFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        Toolbar toolbar = view.findViewById(R.id.toolbar2);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
 
         MaterialCardView card = view.findViewById(R.id.cardNavigate);
-        card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(getContext(), LoginRegisterActivity.class);
-                startActivity(intent);
-            }
+        card.setOnClickListener(v -> {
+            Intent intent= new Intent(getContext(), LoginRegisterActivity.class);
+            startActivity(intent);
         });
         btnLogout = view.findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(v -> {
@@ -53,19 +50,6 @@ public class ProfileFragment extends Fragment{
             editor.apply();
         });
         return view;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
-        menuInflater.inflate(R.menu.topbarcart, menu);
-        super.onCreateOptionsMenu(menu, menuInflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent= new Intent(this.getContext(),CartFragment.class);
-        startActivity(intent);
-        return true;
     }
 
 }
