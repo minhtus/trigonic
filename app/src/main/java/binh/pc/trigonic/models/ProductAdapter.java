@@ -49,7 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         NumberFormat nf = new DecimalFormat("#.#");
         holder.size.setText(String.format("Size: %s", nf.format(product.getSize())));
         holder.price.setText(String.format("₫%,d", product.getPrice()));
-        holder.cond.setText(String.format("Cond %s", nf.format(product.getCond())));
+        holder.cond.setText(String.format("Tình trạng %s/10", nf.format(product.getCond())));
         Glide.with(context)
                 .load(product.getImage())
                 .into(holder.image);

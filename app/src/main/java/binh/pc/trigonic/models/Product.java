@@ -19,16 +19,6 @@ public class Product implements Serializable {
     private String branch;
     private double cond;
 
-    @Ignore
-    public Product(int image, String name, String colors, String category, int price, double cond) {
-        this.image = image;
-        this.name = name;
-        this.colors = colors;
-        this.category = category;
-        this.price = price;
-        this.cond = cond;
-    }
-
     public Product(int image, String name, String colors, String category, int price, double size, String branch, double cond) {
         this.image = image;
         this.name = name;
