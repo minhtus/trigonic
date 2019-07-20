@@ -27,7 +27,6 @@
     <string name="text_branch">Nhãn hiêu</string>
     <string name="text_product_name">Tên sản phẩm</string>
     <string name="text_condition">Tình trạng</string>
-    <string name="text_size">Kích cỡ</string>
     <string name="text_fee">Chi Phí</string>
     <string name="button_submit_product">Đăng bán sản phẩm</string>
     <string name="button_add_photos">thêm ảnh</string>
@@ -47,4 +46,5 @@
     <string name="placeholder_repassword">Nhập lại Mật Khẩu</string>
     <string name="button_logout">Đăng Xuất</string>
     <string name="title_product_detail">Chi tiết sản phẩm</string>
+    <string name="title_activity_submit_product">SubmitProductActivity</string>
 </resources>

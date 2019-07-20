@@ -44,12 +44,9 @@ public class LoggedSellFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
             ArrayList<Image> pickedImages = (ArrayList<Image>) ImagePicker.getImages(data);
-            SubmitProductFragment fragment = SubmitProductFragment.newInstance(pickedImages);
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .addToBackStack(null)
-                    .commit();
+            Intent intent = new Intent(getActivity(), SubmitProductActivity.class);
+            intent.putExtra("IMAGES", pickedImages);
+            startActivity(intent);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
