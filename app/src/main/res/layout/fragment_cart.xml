@@ -36,8 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/mtrl_card_spacing"
             app:cardElevation="0dp"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_alignParentBottom="true"
             >
 
@@ -48,15 +46,14 @@
 
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dip"
-                        android:layout_weight=".75"
+                        android:layout_weight=".6"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
                         android:hint="@string/placeholder_coupon"
                         app:errorEnabled="true"
                         app:helperTextEnabled="true"
@@ -64,18 +61,20 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:inputType="text"
                             />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                         android:id="@+id/material_button"
-                        android:layout_weight=".25"
+                        android:layout_weight=".3"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/button_apply"/>
+                        android:layout_marginStart="10dp"
+                        android:text="@string/button_apply"
+                        />
             </LinearLayout>
 
             <LinearLayout

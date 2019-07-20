@@ -46,5 +46,4 @@
     <string name="placeholder_repassword">Nhập lại Mật Khẩu</string>
     <string name="button_logout">Đăng Xuất</string>
     <string name="title_product_detail">Chi tiết sản phẩm</string>
-    <string name="title_activity_submit_product">SubmitProductActivity</string>
 </resources>

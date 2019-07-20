@@ -9,10 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity
-                android:name=".SubmitProductActivity"
-                android:label="@string/title_activity_submit_product">
-        </activity>
+        <activity android:name=".SubmitProductActivity"/>
         <activity android:name=".LoginRegisterActivity"/>
         <activity android:name=".DetailProductActivity"/>
         <activity android:name=".MainActivity">
