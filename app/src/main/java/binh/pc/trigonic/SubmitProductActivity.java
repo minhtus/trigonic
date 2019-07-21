@@ -67,31 +67,32 @@ public class SubmitProductActivity extends AppCompatActivity {
             String productName = edtName.getText().toString();
             String condition = edtCondition.getText().toString();
             String size = edtSize.getText().toString();
+            String brand = edtBranch.getText().toString();
             Float price = Float.parseFloat(edtPrice.getText().toString());
-            String tax = null;
-            Float truePrice = null;
+            String rate = null;
+            Float fee = null;
             if(price <= 10000000){
-                tax = "5%";
-                truePrice = (price*5)/100 + price;
+                rate = "5%";
+                fee = (price*5)/100;
             }
             if(price <= 20000000 && price > 10000000){
-                tax = "3%";
-                truePrice = (price*3)/100 + price;
+                rate = "3%";
+                fee = (price*3)/100;
             }
             if(price > 20000000){
-                tax = "1%";
-                truePrice = (price*1)/100 + price;
+                rate = "1%";
+                fee = (price*1)/100;
             }
 
 
             Map<String,Object> products = new HashMap<>();
-            products.put("Brand", "Nike");
+            products.put("Brand", brand);
             products.put("Product", productName);
             products.put("Condition", condition);
             products.put("Size", size);
-            products.put("Your Price", price);
-            products.put("Tax", tax);
-            products.put("Price", truePrice);
+            products.put("Price", price);
+            products.put("Rate", rate);
+            products.put("Fee", fee);
 
             db.collection("CusProduct").add(products)
                     .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
