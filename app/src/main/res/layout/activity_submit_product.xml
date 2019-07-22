@@ -55,7 +55,8 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    app:boxBackgroundColor="#fff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
@@ -108,8 +109,6 @@
                         android:layout_margin="4dp"
                         android:hint="@string/placeholder_size"
                         app:errorEnabled="true"
-                        app:helperTextEnabled="true"
-                        app:helperText="@string/helper_size"
                         >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -123,7 +122,8 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    app:boxBackgroundColor="#fff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"

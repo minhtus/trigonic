@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GuestSellActivity"></activity>
+        <activity android:name=".GuestSellActivity"/>
         <activity android:name=".LoggedSellActivity" />
         <activity android:name=".SubmitProductActivity" />
         <activity android:name=".LoginRegisterActivity" />
         <activity android:name=".DetailProductActivity" />
+        <activity android:name=".OrderActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
