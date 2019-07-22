@@ -48,4 +48,5 @@
     <string name="title_product_detail">Chi tiết sản phẩm</string>
     <string name="helper_condition">/10</string>
     <string name="helper_size">Size EU</string>
+    <string name="title_fee">Phí dịch vụ</string>
 </resources>

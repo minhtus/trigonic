@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,6 +29,8 @@ public class SubmitProductActivity extends AppCompatActivity {
     private ImageAdapter imageAdapter;
     private Button btnSubmit;
     private AutoCompleteTextView edtBranch;
+    private TextView txtFee;
+    private TextView txtRate;
     private static final String TAG = "SubmitProductActivity";
 
     @Override
@@ -51,6 +52,20 @@ public class SubmitProductActivity extends AppCompatActivity {
         edtSize = findViewById(R.id.edtSize);
         edtPrice = findViewById(R.id.edtPrice);
         edtPrice.addTextChangedListener(new CurrencyTextWatcher(edtPrice, "₫"));
+        txtFee = findViewById(R.id.txtFee);
+        txtRate = findViewById(R.id.txtRate);
+        edtPrice.setOnFocusChangeListener((v, hasFocus) -> {
+            handleRateAndFee();
+        });
+
+        edtPrice.setOnKeyListener((v, keyCode, event) -> {
+            if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                handleRateAndFee();
+                return true;
+            }
+            return false;
+        });
 
         List<String> brandLists = new ArrayList<>(Arrays.asList("Adidas", "Alexander McQueen", "Balenciaga",
                 "Balmain", "Boss Hugo Boss", "Bulgari", "Burberry", "Cartier", "Dior", "Dolce & Gabbana",
@@ -63,33 +78,27 @@ public class SubmitProductActivity extends AppCompatActivity {
 
 
         ArrayAdapter<String> brandAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, brandLists);
-        brandAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         edtBranch = findViewById(R.id.edtBranch);
         edtBranch.setAdapter(brandAdapter);
 
         btnSubmit = findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(v -> {
+            if (edtName.getText().toString().isEmpty() ||
+                    edtBranch.getText().toString().isEmpty() ||
+                    edtCondition.getText().toString().isEmpty() ||
+                    edtSize.getText().toString().isEmpty() ||
+                    edtPrice.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Làm ơn điền đầy đủ thông tin", Toast.LENGTH_LONG).show();
+                return;
+            }
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             String productName = edtName.getText().toString();
             String condition = edtCondition.getText().toString();
             String size = edtSize.getText().toString();
             String brand = edtBranch.getText().toString();
-            Float price = Float.parseFloat(edtPrice.getText().toString());
-            String rate = null;
-            Float fee = null;
-            if (price <= 10000000) {
-                rate = "5%";
-                fee = (price * 5) / 100;
-            }
-            if (price <= 20000000 && price > 10000000) {
-                rate = "3%";
-                fee = (price * 3) / 100;
-            }
-            if (price > 20000000) {
-                rate = "1%";
-                fee = (price * 1) / 100;
-            }
-
+            int price = Integer.parseInt(edtPrice.getText().toString().replaceAll("[₫,]", ""));
+            String rate = txtRate.getText().toString();
+            int fee = Integer.parseInt(txtFee.getText().toString().replaceAll("[₫,]", ""));
 
             Map<String, Object> products = new HashMap<>();
             products.put("Brand", brand);
@@ -103,8 +112,28 @@ public class SubmitProductActivity extends AppCompatActivity {
             db.collection("CusProduct").add(products)
                     .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
                     .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-
+            Toast.makeText(this, "Đăng bán thành công, chờ duyệt", Toast.LENGTH_LONG).show();
+            this.finish();
         });
+    }
+
+    private void handleRateAndFee() {
+        String txtPrice = edtPrice.getText().toString().replaceAll("[₫,]", "");
+        if (!txtPrice.isEmpty()) {
+            int price = Integer.parseInt(txtPrice);
+            int rate = 0;
+            if (price <= 10000000) {
+                rate = 5;
+            }
+            if (price <= 20000000 && price > 10000000) {
+                rate = 3;
+            }
+            if (price > 20000000) {
+                rate = 1;
+            }
+            txtFee.setText(String.format("₫%,d", price*rate/100));
+            txtRate.setText(String.valueOf(rate) + "%");
+        }
     }
 
 }
