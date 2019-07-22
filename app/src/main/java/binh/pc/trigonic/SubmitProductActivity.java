@@ -12,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import binh.pc.trigonic.database.AppDatabase;
 import binh.pc.trigonic.models.ImageAdapter;
+import binh.pc.trigonic.models.ProductHistory;
 import binh.pc.trigonic.utils.CurrencyTextWatcher;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -113,6 +116,10 @@ public class SubmitProductActivity extends AppCompatActivity {
                     .addOnSuccessListener(documentReference -> Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId()))
                     .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
             Toast.makeText(this, "Đăng bán thành công, chờ duyệt", Toast.LENGTH_LONG).show();
+            String txtPrice = edtPrice.getText().toString().replaceAll("[₫,]", "");
+            imageAdapter.getImageList().get(0).getPath();
+            ProductHistory productHistory= new ProductHistory(imageAdapter.getImageList().get(0).getPath(), edtName.getText().toString(), "", "", Integer.parseInt(txtPrice), Double.parseDouble(edtSize.getText().toString()), edtBranch.getText().toString(),Double.parseDouble(edtCondition.getText().toString()));
+            AppDatabase.getInstance(this).historyProductDAO().insert(productHistory);
             this.finish();
         });
     }

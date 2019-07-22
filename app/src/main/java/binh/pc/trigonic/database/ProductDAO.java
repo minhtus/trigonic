@@ -21,4 +21,5 @@ public interface ProductDAO {
 
     @Query("delete from Cart")
     void deleteAll();
+
 }

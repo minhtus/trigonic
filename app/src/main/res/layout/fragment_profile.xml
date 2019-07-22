@@ -116,6 +116,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardSell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
@@ -147,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
-                    android:text="Ưu đãi"
+                    android:text="Bán Hàng"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -192,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
-                    android:text="Lịch sử"
+                    android:text="Lịch sử mua hàng"
                     android:textSize="15sp" />
             </LinearLayout>
 

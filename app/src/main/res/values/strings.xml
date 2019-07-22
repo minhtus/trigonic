@@ -49,4 +49,6 @@
     <string name="helper_condition">/10</string>
     <string name="helper_size">Size EU</string>
     <string name="title_fee">Phí dịch vụ</string>
+    <string name="placeholder_address">Địa chỉ</string>
+    <string name="title_sellproduct">Sản phẩm đã đăng</string>
 </resources>
