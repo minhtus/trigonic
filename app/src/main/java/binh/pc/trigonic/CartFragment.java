@@ -30,7 +30,7 @@ public class CartFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
-        cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).productDAO().getAll());
+        cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).cartDAO().getAll());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -60,5 +60,16 @@ public class CartFragment extends Fragment{
             }
         });
         return view;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    public void onResume() {
+        super.onResume();
+        cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).cartDAO().getAll());
+        cartRecyclerView.setAdapter(cartAdapter);
+        txtTotal.setText(String.format("₫%,d", cartAdapter.getCart().stream()
+                .map(Product::getPrice)
+                .reduce(0, Integer::sum)));
     }
 }
