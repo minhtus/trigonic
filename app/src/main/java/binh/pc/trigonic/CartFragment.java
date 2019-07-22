@@ -2,6 +2,7 @@ package binh.pc.trigonic;
 
 import android.os.Build;
 import android.view.*;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,6 +49,18 @@ public class CartFragment extends Fragment{
         txtTotal.setText(String.format("₫%,d", cartAdapter.getCart().stream()
                 .map(Product::getPrice)
                 .reduce(0, Integer::sum)));
+        Button btnProceedOrder= view.findViewById(R.id.btnProceedOrder);
+        TextView text=view.findViewById(R.id.txtTotal);
+        btnProceedOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_LONG).show();
+                AppDatabase.getInstance(getContext()).productDAO().deleteAll();
+                cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).productDAO().getAll());
+                cartRecyclerView.setAdapter(cartAdapter);
+                text.setText("đ0");
+            }
+        });
         return view;
     }
 }
