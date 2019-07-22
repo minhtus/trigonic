@@ -1,5 +1,6 @@
 package binh.pc.trigonic;
 
+import android.content.Intent;
 import android.os.Build;
 import android.view.*;
 import android.widget.Button;
@@ -52,11 +53,8 @@ public class CartFragment extends Fragment{
         Button btnProceedOrder= view.findViewById(R.id.btnProceedOrder);
         btnProceedOrder.setOnClickListener(v -> {
             if (cartAdapter.getCart().size() > 0) {
-                AppDatabase.getInstance(getContext()).productDAO().deleteAll();
-                cartAdapter.getCart().clear();
-                cartAdapter.notifyDataSetChanged();
-                txtTotal.setText("₫0");
-                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), OrderActivity.class);
+                startActivity(intent);
             } else {
                 Toast.makeText(getContext(), "Giỏ hàng trống", Toast.LENGTH_LONG).show();
             }

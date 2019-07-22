@@ -33,6 +33,9 @@ public class LoginFragment extends Fragment {
                     .getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean(getString(R.string.login_shared_prefs), true);
+            editor.putString(getString(R.string.name_shared_prefs), "Nguyễn Minh Tú");
+            editor.putString(getString(R.string.phone_shared_prefs), "0899906998");
+            editor.putString(getString(R.string.address_shared_prefs), "62 Tô Ký, phường Tân Hưng Thuận, Quận 12, Tp.HCM");
             editor.apply();
             getActivity().finish();
         });
