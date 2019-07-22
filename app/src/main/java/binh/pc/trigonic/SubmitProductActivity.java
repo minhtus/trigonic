@@ -2,25 +2,30 @@ package binh.pc.trigonic;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import binh.pc.trigonic.models.ImageAdapter;
-import com.esafirm.imagepicker.model.Image;
+import binh.pc.trigonic.utils.CurrencyTextWatcher;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.NumberFormat;
 import java.util.*;
 
 public class SubmitProductActivity extends AppCompatActivity {
-    private EditText edtName;
-    private EditText edtCondition;
-    private EditText edtSize;
-    private EditText edtPrice;
+    private TextInputEditText edtName;
+    private TextInputEditText edtCondition;
+    private TextInputEditText edtSize;
+    private TextInputEditText edtPrice;
     private RecyclerView imageRecyclerView;
     private ImageAdapter imageAdapter;
     private Button btnSubmit;
@@ -45,6 +50,7 @@ public class SubmitProductActivity extends AppCompatActivity {
         edtCondition = findViewById(R.id.edtCondition);
         edtSize = findViewById(R.id.edtSize);
         edtPrice = findViewById(R.id.edtPrice);
+        edtPrice.addTextChangedListener(new CurrencyTextWatcher(edtPrice, "₫"));
 
         List<String> brandLists = new ArrayList<>(Arrays.asList("Adidas", "Alexander McQueen", "Balenciaga",
                 "Balmain", "Boss Hugo Boss", "Bulgari", "Burberry", "Cartier", "Dior", "Dolce & Gabbana",
@@ -71,21 +77,21 @@ public class SubmitProductActivity extends AppCompatActivity {
             Float price = Float.parseFloat(edtPrice.getText().toString());
             String rate = null;
             Float fee = null;
-            if(price <= 10000000){
+            if (price <= 10000000) {
                 rate = "5%";
-                fee = (price*5)/100;
+                fee = (price * 5) / 100;
             }
-            if(price <= 20000000 && price > 10000000){
+            if (price <= 20000000 && price > 10000000) {
                 rate = "3%";
-                fee = (price*3)/100;
+                fee = (price * 3) / 100;
             }
-            if(price > 20000000){
+            if (price > 20000000) {
                 rate = "1%";
-                fee = (price*1)/100;
+                fee = (price * 1) / 100;
             }
 
 
-            Map<String,Object> products = new HashMap<>();
+            Map<String, Object> products = new HashMap<>();
             products.put("Brand", brand);
             products.put("Product", productName);
             products.put("Condition", condition);
