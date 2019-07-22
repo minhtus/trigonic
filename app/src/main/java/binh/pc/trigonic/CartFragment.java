@@ -50,15 +50,15 @@ public class CartFragment extends Fragment{
                 .map(Product::getPrice)
                 .reduce(0, Integer::sum)));
         Button btnProceedOrder= view.findViewById(R.id.btnProceedOrder);
-        TextView text=view.findViewById(R.id.txtTotal);
-        btnProceedOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_LONG).show();
+        btnProceedOrder.setOnClickListener(v -> {
+            if (cartAdapter.getCart().size() > 0) {
                 AppDatabase.getInstance(getContext()).productDAO().deleteAll();
-                cartAdapter = new CartAdapter(getContext(), AppDatabase.getInstance(getContext()).productDAO().getAll());
-                cartRecyclerView.setAdapter(cartAdapter);
-                text.setText("đ0");
+                cartAdapter.getCart().clear();
+                cartAdapter.notifyDataSetChanged();
+                txtTotal.setText("₫0");
+                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getContext(), "Giỏ hàng trống", Toast.LENGTH_LONG).show();
             }
         });
         return view;
