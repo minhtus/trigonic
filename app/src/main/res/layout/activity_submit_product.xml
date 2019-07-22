@@ -86,6 +86,8 @@
                         android:layout_margin="4dp"
                         android:hint="@string/placeholder_condition"
                         app:errorEnabled="true"
+                        app:helperTextEnabled="true"
+                        app:helperText="@string/helper_condition"
                         >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -93,6 +95,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal|numberSigned"
+                            android:maxLength="2"
                             />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,6 +108,8 @@
                         android:layout_margin="4dp"
                         android:hint="@string/placeholder_size"
                         app:errorEnabled="true"
+                        app:helperTextEnabled="true"
+                        app:helperText="@string/helper_size"
                         >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -112,6 +117,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberDecimal|numberSigned"
+                            android:maxLength="2"
                             />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -131,22 +137,51 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:textAlignment="textEnd"
+                        android:maxLines="1"
                         />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                    android:id="@+id/txtFee"
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_order"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    />
+                    android:layout_margin="@dimen/mtrl_card_spacing"
+                    app:cardElevation="0dp"
+                    >
 
-            <TextView
-                    android:id="@+id/txtRealPrice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    />
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:layout_gravity="top|start"
+                            android:textSize="16sp"
+                            android:text="@string/title_fee"/>
+
+                    <TextView
+                            android:id="@+id/txtFee"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="end"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/txtRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:layout_marginTop="20dp"
+                        />
+
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSubmit"

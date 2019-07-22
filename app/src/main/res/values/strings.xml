@@ -32,7 +32,7 @@
     <string name="button_add_photos">thêm ảnh</string>
     <string name="placeholder_product_name">Tên sản phẩm</string>
     <string name="placeholder_condition">Tình trạng</string>
-    <string name="placeholder_size">Kích cỡ</string>
+    <string name="placeholder_size">Size</string>
     <string name="placeholder_price">Giá</string>
     <string name="image_picker_toolbar_title">Hình ảnh cho sản phẩm</string>
     <string name="description_selling">Đăng bán bằng cách thêm hình ảnh sản phẩm của bạn</string>
@@ -46,4 +46,7 @@
     <string name="placeholder_repassword">Nhập lại Mật Khẩu</string>
     <string name="button_logout">Đăng Xuất</string>
     <string name="title_product_detail">Chi tiết sản phẩm</string>
+    <string name="helper_condition">/10</string>
+    <string name="helper_size">Size EU</string>
+    <string name="title_fee">Phí dịch vụ</string>
 </resources>
