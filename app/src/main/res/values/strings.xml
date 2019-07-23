@@ -61,4 +61,10 @@
     <string name="text_payment_type">Hình thức thanh toán</string>
     <string name="button_order">Đặt hàng</string>
     <string name="placeholder_receiver_name">Người nhận</string>
+    <string name="title_order_pending">Đang xác nhận</string>
+    <string name="title_order_delivering">Đang giao</string>
+    <string name="title_order_completed">Đã giao</string>
+    <string name="title_order_canceled">Đã huỷ</string>
+    <string name="title_order_history">Đơn hàng</string>
+    <string name="button_cancel_order">Huỷ đơn</string>
 </resources>

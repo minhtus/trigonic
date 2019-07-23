@@ -1,9 +1,12 @@
 package binh.pc.trigonic;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
@@ -21,6 +24,7 @@ public class OrderActivity extends AppCompatActivity {
     private TextInputEditText edtAddress;
     private Button btnOrder;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +48,13 @@ public class OrderActivity extends AppCompatActivity {
         btnOrder.setOnClickListener(v -> {
             AppDatabase database = AppDatabase.getInstance(this);
             List<Product> products = database.cartDAO().getAll();
-            database.orderDAO().insert(new Order(products, Order.ORDER_PENDING, Calendar.getInstance().toString()));
+            int total = products.stream().map(Product::getPrice).reduce(Integer::sum).get();
+            database.orderDAO().insert(new Order(products, Order.PENDING, Calendar.getInstance().toString(), total));
             Toast.makeText(this, "Đặt hàng thành công", Toast.LENGTH_LONG).show();
             database.cartDAO().deleteAll();
             this.finish();
+            Intent intent = new Intent(this, OrderHistoryActivity.class);
+            startActivity(intent);
         });
     }
 }

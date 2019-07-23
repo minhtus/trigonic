@@ -14,16 +14,18 @@ public class Order {
     private List<Product> products;
     private String status;
     private String date;
+    private int total;
 
-    public static String ORDER_PENDING = "Đang xác nhận";
+    public static String PENDING = "Đang xác nhận";
     public static String DELIVERING = "Đang giao";
     public static String COMPLETED = "Đã giao";
     public static String CANCELED = "Đã huỷ";
 
-    public Order(List<Product> products, String status, String date) {
+    public Order(List<Product> products, String status, String date, int total) {
         this.products = products;
         this.status = status;
         this.date = date;
+        this.total = total;
     }
 
     public int getId() {
@@ -56,5 +58,13 @@ public class Order {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 }
