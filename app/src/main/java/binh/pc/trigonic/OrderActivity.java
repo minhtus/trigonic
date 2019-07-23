@@ -49,7 +49,9 @@ public class OrderActivity extends AppCompatActivity {
             AppDatabase database = AppDatabase.getInstance(this);
             List<Product> products = database.cartDAO().getAll();
             int total = products.stream().map(Product::getPrice).reduce(Integer::sum).get();
-            database.orderDAO().insert(new Order(products, Order.PENDING, Calendar.getInstance().toString(), total));
+            database.orderDAO().insert(new Order(products, Order.PENDING,
+                    Calendar.getInstance().toString(), edtName.getText().toString() , edtPhone.getText().toString(),
+                    edtAddress.getText().toString(), Order.PAYMENT_COD , total));
             Toast.makeText(this, "Đặt hàng thành công", Toast.LENGTH_LONG).show();
             database.cartDAO().deleteAll();
             this.finish();

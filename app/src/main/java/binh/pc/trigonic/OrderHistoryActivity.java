@@ -35,7 +35,6 @@ public class OrderHistoryActivity extends AppCompatActivity {
                         break;
                     case 3:
                         fragment = new OrderCanceledFragment();
-
                 }
                 loadFragment(fragment);
             }
