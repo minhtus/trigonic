@@ -53,12 +53,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Glide.with(context)
                 .load(product.getImage())
                 .into(holder.image);
-
-        holder.image.setOnClickListener(v -> {
-            Intent intent = new Intent(context, DetailProductActivity.class);
-            intent.putExtra("PRODUCT", product);
-            context.startActivity(intent);
-        });
     }
 
     @Override

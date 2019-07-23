@@ -50,5 +50,4 @@ public class LoggedSellFragment extends Fragment {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
 }

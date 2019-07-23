@@ -9,9 +9,12 @@
     <string name="title_women">Nữ</string>
     <string name="button_login">ĐĂNG NHẬP</string>
     <string name="button_register">ĐĂNG KÍ</string>
-    <string name="quote_sell">Tham giá bán hàng bằng cách đăng nhập hoặc đăng ký. Chỉ những người bán được chấp thuận mới được phép tham gia bán hàng</string>
+    <string name="quote_sell">Tham gia bán hàng bằng cách đăng nhập hoặc đăng ký. Chỉ những người bán được chấp thuận mới được phép tham gia bán hàng</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="login_shared_prefs">logged</string>
+    <string name="name_shared_prefs">name</string>
+    <string name="phone_shared_prefs">phone</string>
+    <string name="address_shared_prefs">address</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -22,7 +25,7 @@
     <string name="button_apply">Áp dụng</string>
     <string name="title_Total">Tổng cộng</string>
     <string name="text_include_cost">Đã bao gồm chi phí dịch vụ</string>
-    <string name="button_proceed_order">Đặt hàng</string>
+    <string name="button_proceed_order">Tiến hành đặt hàng</string>
     <string name="title_submit_product">Đăng bán sản phẩm</string>
     <string name="text_branch">Nhãn hiêu</string>
     <string name="text_product_name">Tên sản phẩm</string>
@@ -50,6 +53,7 @@
     <string name="helper_size">Size EU</string>
     <string name="title_fee">Phí dịch vụ</string>
 
+
     <string-array name="query_suggestions">
         <item>Jordan Proto-Max 720</item>
         <item>Nike Air Monarch IV</item>
@@ -72,4 +76,15 @@
         <item>Nike Air Max 270</item>
         <item>Air Jordan 1 Retro Low S</item>
     </string-array>
+
+    <string name="placeholder_address">Địa chỉ</string>
+    <string name="title_sellproduct">Sản phẩm đã đăng</string>
+    <string name="title_order">Đặt hàng</string>
+    <string name="radio_cash_on_delivery">Thanh toán tiền mặt khi nhận hàng</string>
+    <string name="radio_momo_payment">Thanh toán bằng ví MoMo</string>
+    <string name="text_delivery_address">Địa chỉ giao hàng</string>
+    <string name="text_payment_type">Hình thức thanh toán</string>
+    <string name="button_order">Đặt hàng</string>
+    <string name="placeholder_receiver_name">Người nhận</string>
+
 </resources>

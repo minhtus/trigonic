@@ -42,7 +42,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.txtCond.setText(String.format("Tình trạng %.1f - Verify by Trigonic", cartItem.getCond()));
         holder.txtPrice.setText(String.format("₫%,d", cartItem.getPrice()));
         holder.imgClear.setOnClickListener(v -> {
-            AppDatabase.getInstance(context).productDAO().delete(cartItem);
+            AppDatabase.getInstance(context).cartDAO().delete(cartItem);
             cart.remove(cartItem);
             this.notifyItemRemoved(position);
         });

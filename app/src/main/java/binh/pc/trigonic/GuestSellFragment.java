@@ -33,4 +33,5 @@ public class GuestSellFragment extends Fragment {
         return view;
     }
 
+
 }

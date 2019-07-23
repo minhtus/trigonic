@@ -17,6 +17,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private Context context;
     private List<Image> imageList;
 
+    public List<Image> getImageList() {
+        return imageList;
+    }
+
     public ImageAdapter(Context context, List<Image> imageList) {
         this.context = context;
         this.imageList = imageList;

@@ -9,7 +9,7 @@ import binh.pc.trigonic.models.Product;
 import java.util.List;
 
 @Dao
-public interface ProductDAO {
+public interface CartDAO {
     @Insert
     void insert(Product product);
 
@@ -21,4 +21,5 @@ public interface ProductDAO {
 
     @Query("delete from Cart")
     void deleteAll();
+
 }

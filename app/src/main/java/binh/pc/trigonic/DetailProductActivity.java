@@ -57,7 +57,7 @@ public class DetailProductActivity extends AppCompatActivity {
 
         btnAddToCart = findViewById(R.id.btnAddToCart);
         btnAddToCart.setOnClickListener(v -> {
-            AppDatabase.getInstance(this).productDAO().insert(product);
+            AppDatabase.getInstance(this).cartDAO().insert(product);
             this.finish();
         });
     }
