@@ -8,7 +8,7 @@ import binh.pc.trigonic.models.Order;
 import binh.pc.trigonic.models.Product;
 import binh.pc.trigonic.models.ProductHistory;
 
-@Database(entities = {Product.class, Order.class, ProductHistory.class}, version = 1)
+@Database(entities = {Product.class, Order.class, ProductHistory.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract CartDAO cartDAO();
     public abstract OrderDAO orderDAO();

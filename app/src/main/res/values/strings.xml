@@ -52,8 +52,25 @@
     <string name="helper_condition">/10</string>
     <string name="helper_size">Size EU</string>
     <string name="title_fee">Phí dịch vụ</string>
-
-
+    <string name="placeholder_address">Địa chỉ</string>
+    <string name="title_sellproduct">Sản phẩm đã đăng</string>
+    <string name="title_order">Đặt hàng</string>
+    <string name="radio_cash_on_delivery">Thanh toán tiền mặt khi nhận hàng</string>
+    <string name="radio_momo_payment">Thanh toán bằng ví MoMo</string>
+    <string name="text_delivery_address">Địa chỉ giao hàng</string>
+    <string name="text_payment_type">Hình thức thanh toán</string>
+    <string name="button_order">Đặt hàng</string>
+    <string name="placeholder_receiver_name">Người nhận</string>
+    <string name="title_order_pending">Đang xác nhận</string>
+    <string name="title_order_delivering">Đang giao</string>
+    <string name="title_order_completed">Đã giao</string>
+    <string name="title_order_canceled">Đã huỷ</string>
+    <string name="title_order_history">Đơn hàng</string>
+    <string name="button_cancel_order">Huỷ đơn</string>
+    <string name="title_order_detail">Chi tiết đơn hàng</string>
+    <string name="title_delivery_information">Thông tin giao hàng</string>
+    <string name="title_payment_information">Thông tin thanh toán</string>
+    <string name="text_order_date">Ngày đặt hàng</string>
     <string-array name="query_suggestions">
         <item>Jordan Proto-Max 720</item>
         <item>Nike Air Monarch IV</item>
@@ -76,15 +93,4 @@
         <item>Nike Air Max 270</item>
         <item>Air Jordan 1 Retro Low S</item>
     </string-array>
-
-    <string name="placeholder_address">Địa chỉ</string>
-    <string name="title_sellproduct">Sản phẩm đã đăng</string>
-    <string name="title_order">Đặt hàng</string>
-    <string name="radio_cash_on_delivery">Thanh toán tiền mặt khi nhận hàng</string>
-    <string name="radio_momo_payment">Thanh toán bằng ví MoMo</string>
-    <string name="text_delivery_address">Địa chỉ giao hàng</string>
-    <string name="text_payment_type">Hình thức thanh toán</string>
-    <string name="button_order">Đặt hàng</string>
-    <string name="placeholder_receiver_name">Người nhận</string>
-
 </resources>
