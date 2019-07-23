@@ -46,4 +46,6 @@ dependencies {
     annotationProcessor group: 'androidx.room', name: 'room-compiler', version: '2.2.0-alpha01'
     implementation group: 'com.github.esafirm.android-image-picker', name: 'rximagepicker', version: '2.0.0'
 
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
 }
+

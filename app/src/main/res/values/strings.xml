@@ -49,4 +49,27 @@
     <string name="helper_condition">/10</string>
     <string name="helper_size">Size EU</string>
     <string name="title_fee">Phí dịch vụ</string>
+
+    <string-array name="query_suggestions">
+        <item>Jordan Proto-Max 720</item>
+        <item>Nike Air Monarch IV</item>
+        <item>Nike Air Barrage Mid</item>
+        <item>Nike Air Max 720 SATRN</item>
+        <item>Nike React Element 55</item>
+        <item>Nike SF Air Force Hi</item>
+        <item>Air Jordan 14 Retro SE</item>
+        <item>Air Jordan XXXIII</item>
+        <item>Nike Air Max 270 React</item>
+        <item>Jordan Ultra Fly 3 Low</item>
+        <item>Air Jordan 1 Retro Low S</item>
+        <item>Air Jordan 1 Retro High</item>
+        <item>Nike M2k Tenko SE</item>
+        <item>Nike React Element 55</item>
+        <item>NikeCourt Royale AC</item>
+        <item>Nike Air Max FF 720</item>
+        <item>Nike Air Max 90</item>
+        <item>Nike Blazer Mid By You</item>
+        <item>Nike Air Max 270</item>
+        <item>Air Jordan 1 Retro Low S</item>
+    </string-array>
 </resources>

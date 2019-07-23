@@ -10,10 +10,10 @@
         android:title="@string/title_home"
         />
     <item
-        android:id="@+id/action_sell"
+        android:id="@+id/action_search"
         android:enabled="true"
-        android:icon="@drawable/ic_local_offer_black_24dp"
-        android:title="@string/title_sell"
+        android:icon="@drawable/ic_search"
+        android:title="Tìm Kiếm"
         />
     <item
         android:id="@+id/action_cart"

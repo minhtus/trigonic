@@ -26,11 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.action_home:
                     fragment = new HomeFragment();
                     break;
-                case R.id.action_sell:
-                    SharedPreferences sharedPreferences =
-                            getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
-                    boolean logged = sharedPreferences.getBoolean(getString(R.string.login_shared_prefs), false);
-                    fragment = logged ? new LoggedSellFragment() : new GuestSellFragment();
+                case R.id.action_search:
+                    fragment = new SearchActivity();
                     break;
                 case R.id.action_cart:
                     fragment = new CartFragment();
