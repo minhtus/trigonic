@@ -46,6 +46,7 @@ public class OrderHistoryAdapter extends RecyclerView.Adapter<OrderHistoryAdapte
                 .into(holder.image);
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, OrderDetailActivity.class);
+            intent.putExtra("ORDER", order);
             context.startActivity(intent);
         });
     }

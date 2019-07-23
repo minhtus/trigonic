@@ -68,4 +68,6 @@
     <string name="title_order_history">Đơn hàng</string>
     <string name="button_cancel_order">Huỷ đơn</string>
     <string name="title_order_detail">Chi tiết đơn hàng</string>
+    <string name="title_delivery_information">Thông tin giao hàng</string>
+    <string name="title_payment_information">Thông tin thanh toán</string>
 </resources>

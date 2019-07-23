@@ -5,7 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".OrderDetailActivity">
+        tools:context=".OrderDetailActivity"
+        android:background="@drawable/img_shade"
+        >
 
     <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -19,25 +21,172 @@
     <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginBottom="10dp"
+            >
 
-        <TextView
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_place_black_24dp"
+                        />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/title_delivery_information"
+                        />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="25dp"
+                    >
+
+                <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                <TextView
+                        android:id="@+id/txtPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/txtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardPayment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardAddress"
+            android:layout_marginBottom="10dp"
+            >
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_payment_black_24dp"
+                        />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/title_payment_information"
+                        />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="25dp"
+                    >
+
+                <TextView
+                        android:id="@+id/txtPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:layout_gravity="top|start"
+                            android:textSize="16sp"
+                            android:text="@string/title_Total"/>
+
+                    <TextView
+                            android:id="@+id/txtTotal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="end"
+                            android:textSize="18sp"
+                            android:textColor="#8B0000"
+                            android:textStyle="bold"
+                            />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardPayment"
+            >
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:text="@string/title_order_detail"
+                android:layout_margin="10dp"
+                android:layout_marginStart="25dp"
+                />
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_order_detail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardDetail"
+            />
 
 </RelativeLayout>

@@ -4,10 +4,11 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Order {
+public class Order implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @TypeConverters(ProductListConverter.class)
