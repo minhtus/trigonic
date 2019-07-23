@@ -70,4 +70,5 @@
     <string name="title_order_detail">Chi tiết đơn hàng</string>
     <string name="title_delivery_information">Thông tin giao hàng</string>
     <string name="title_payment_information">Thông tin thanh toán</string>
+    <string name="text_order_date">Ngày đặt hàng</string>
 </resources>

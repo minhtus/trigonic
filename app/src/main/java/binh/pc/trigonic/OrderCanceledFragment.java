@@ -18,7 +18,7 @@ import binh.pc.trigonic.models.OrderHistoryAdapter;
  */
 public class OrderCanceledFragment extends Fragment {
     OrderHistoryAdapter orderHistoryAdapter;
-    RecyclerView orderPendingRecyclerView;
+    RecyclerView orderRecyclerView;
 
     public OrderCanceledFragment() {
         // Required empty public constructor
@@ -31,9 +31,9 @@ public class OrderCanceledFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_order_pending, container, false);
         orderHistoryAdapter = new OrderHistoryAdapter(getContext(), AppDatabase.getInstance(getContext()).orderDAO().getByStatus(Order.CANCELED));
-        orderPendingRecyclerView = view.findViewById(R.id.recycler_pending_order);
-        orderPendingRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        orderPendingRecyclerView.setAdapter(orderHistoryAdapter);
+        orderRecyclerView = view.findViewById(R.id.recycler_order);
+        orderRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        orderRecyclerView.setAdapter(orderHistoryAdapter);
         return view;
     }
 

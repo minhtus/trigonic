@@ -1,5 +1,7 @@
 package binh.pc.trigonic;
 
+import android.content.Intent;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;

@@ -19,6 +19,6 @@ public interface OrderDAO {
     @Query("select * from `order`")
     List<Order> getAll();
 
-    @Query("select * from `order` where status == :status")
+    @Query("select * from `order` where status == :status order by id desc")
     List<Order> getByStatus(String status);
 }

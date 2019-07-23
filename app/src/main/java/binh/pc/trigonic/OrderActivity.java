@@ -1,5 +1,6 @@
 package binh.pc.trigonic;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import binh.pc.trigonic.models.Order;
 import binh.pc.trigonic.models.Product;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.time.Instant;
 import java.util.Calendar;
 import java.util.List;
 
@@ -24,7 +26,7 @@ public class OrderActivity extends AppCompatActivity {
     private TextInputEditText edtAddress;
     private Button btnOrder;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,8 @@ public class OrderActivity extends AppCompatActivity {
             List<Product> products = database.cartDAO().getAll();
             int total = products.stream().map(Product::getPrice).reduce(Integer::sum).get();
             database.orderDAO().insert(new Order(products, Order.PENDING,
-                    Calendar.getInstance().toString(), edtName.getText().toString() , edtPhone.getText().toString(),
+                    Calendar.getInstance().getTimeInMillis(),
+                    edtName.getText().toString() , edtPhone.getText().toString(),
                     edtAddress.getText().toString(), Order.PAYMENT_COD , total));
             Toast.makeText(this, "Đặt hàng thành công", Toast.LENGTH_LONG).show();
             database.cartDAO().deleteAll();

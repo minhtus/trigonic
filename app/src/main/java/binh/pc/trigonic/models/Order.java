@@ -14,7 +14,7 @@ public class Order implements Serializable {
     @TypeConverters(ProductListConverter.class)
     private List<Product> products;
     private String status;
-    private String date;
+    private long date;
     private String name;
     private String phone;
     private String address;
@@ -28,7 +28,7 @@ public class Order implements Serializable {
     public static String PAYMENT_COD = "Thanh toán tiền mặt khi nhận hàng";
     public static String PAYMENT_MOMO = "Thanh toán bằng ví MoMo";
 
-    public Order(List<Product> products, String status, String date, String name, String phone, String address, String payment, int total) {
+    public Order(List<Product> products, String status, long date, String name, String phone, String address, String payment, int total) {
         this.products = products;
         this.status = status;
         this.date = date;
@@ -63,11 +63,11 @@ public class Order implements Serializable {
         this.status = status;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
