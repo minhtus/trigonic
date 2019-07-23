@@ -47,31 +47,8 @@ public class ProfileFragment extends Fragment {
         cardHistory = view.findViewById(R.id.cardHistory);
 
         if (logged) {
-            txtTitle1.setText("Nguyễn Minh Tú");
-            txtTitle1.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-            txtTitle1.setTextSize(17);
-            txtTitle2.setText("tu@gmail.com thành viên từ 28/09/2018");
-            txtTitle2.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-            txtTitle2.setTextSize(15);
-            btnLogout.setVisibility(View.VISIBLE);
-            btnLogout.setOnClickListener(v -> {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(getString(R.string.login_shared_prefs), false);
-                editor.apply();
-                getActivity().finish();
-                startActivity(getActivity().getIntent());
-            });
-            cardSell.setOnClickListener(v -> {
-                Intent intent = new Intent(getContext(), LoggedSellActivity.class);
-                startActivity(intent);
-            });
-            cardHistory.setOnClickListener(v -> {
-                Intent intent = new Intent(getContext(), OrderHistoryActivity.class);
-                startActivity(intent);
-            });
-
-        }
-        if (!logged) {
+            handleLoggedIn(sharedPreferences);
+        } else {
             card.setOnClickListener(v -> {
                 Intent intent = new Intent(getContext(), LoginRegisterActivity.class);
                 startActivityForResult(intent, 1);
@@ -85,38 +62,39 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             });
         }
-
         return view;
     }
 
+    private void handleLoggedIn(SharedPreferences sharedPreferences) {
+        txtTitle1.setText(sharedPreferences.getString(getString(R.string.name_shared_prefs), ""));
+        txtTitle1.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        txtTitle1.setTextSize(17);
+        txtTitle2.setText("tu@gmail.com thành viên từ 28/09/2018");
+        txtTitle2.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
+        txtTitle2.setTextSize(15);
+        btnLogout.setVisibility(View.VISIBLE);
+        btnLogout.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(getString(R.string.login_shared_prefs), false);
+            editor.apply();
+            getActivity().finish();
+            startActivity(getActivity().getIntent());
+        });
+        cardSell.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), LoggedSellActivity.class);
+            startActivity(intent);
+        });
+        cardHistory.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), OrderHistoryActivity.class);
+            startActivity(intent);
+        });
+    }
+
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case 1:
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
-                boolean logged = sharedPreferences.getBoolean(getString(R.string.login_shared_prefs), false);
-                if (logged) {
-                    txtTitle1.setText("Nguyễn Minh Tú");
-                    txtTitle1.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-                    txtTitle1.setTextSize(17);
-                    txtTitle2.setText("tu@gmail.com thành viên từ 28/09/2018");
-                    txtTitle2.setTypeface(Typeface.DEFAULT, Typeface.NORMAL);
-                    txtTitle2.setTextSize(15);
-                    btnLogout.setVisibility(View.VISIBLE);
-                    btnLogout.setOnClickListener(v -> {
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putBoolean(getString(R.string.login_shared_prefs), false);
-                        editor.apply();
-                        getActivity().finish();
-                        startActivity(getActivity().getIntent());
-                    });
-                    card.setClickable(false);
-                    cardSell.setOnClickListener(v -> {
-                        Intent intent = new Intent(getContext(), LoggedSellActivity.class);
-                        startActivity(intent);
-                    });
-                }
-        }
+    public void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
+        boolean logged = sharedPreferences.getBoolean(getString(R.string.login_shared_prefs), false);
+        if (logged) handleLoggedIn(sharedPreferences);
     }
 }
