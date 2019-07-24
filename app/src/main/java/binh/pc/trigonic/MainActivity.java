@@ -10,17 +10,21 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import binh.pc.trigonic.database.AppDatabase;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Fragment fragment = null;
+    BottomNavigationView bottomNavigationView;
+
+    private Fragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadFragment(new HomeFragment());
-        BottomNavigationView bottomNavigationView =  findViewById(R.id.bottom_navigation);
+        bottomNavigationView =  findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()){
                 case R.id.action_home:
@@ -42,15 +46,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case 1:
-                SharedPreferences sharedPreferences =
-                        getSharedPreferences(getString(R.string.login_shared_prefs), Context.MODE_PRIVATE);
-                boolean logged = sharedPreferences.getBoolean(getString(R.string.login_shared_prefs), false);
-                fragment = logged ? new LoggedSellFragment() : new GuestSellFragment();
-                loadFragment(fragment);
+    protected void onResume() {
+        super.onResume();
+        int cartSize = AppDatabase.getInstance(this).cartDAO().getAll().size();
+        int menuItemId = bottomNavigationView.getMenu().getItem(2).getItemId();
+        BadgeDrawable badge = bottomNavigationView.getOrCreateBadge(menuItemId);
+        if (cartSize > 0) {
+            badge.setVisible(true);
+            badge.setNumber(cartSize);
+        } else {
+            badge.clearNumber();
+            badge.setVisible(false);
         }
     }
 
@@ -63,15 +69,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return false;
-    }
-
-
-    public void clịckToLoginRegisTer(View view) {
-
-    }
-
-    public void clickToNavigateLogin(View view) {
-
     }
 }
 
