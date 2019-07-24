@@ -118,7 +118,14 @@ public class SubmitProductActivity extends AppCompatActivity {
             Toast.makeText(this, "Đăng bán thành công, chờ duyệt", Toast.LENGTH_LONG).show();
             String txtPrice = edtPrice.getText().toString().replaceAll("[₫,]", "");
             imageAdapter.getImageList().get(0).getPath();
-            ProductHistory productHistory= new ProductHistory(imageAdapter.getImageList().get(0).getPath(), edtName.getText().toString(), "", "", Integer.parseInt(txtPrice), Double.parseDouble(edtSize.getText().toString()), edtBranch.getText().toString(),Double.parseDouble(edtCondition.getText().toString()));
+            ProductHistory productHistory= new ProductHistory(imageAdapter.getImageList().get(0).getPath(),
+                    edtName.getText().toString(), "", "",
+                    Integer.parseInt(txtPrice),
+                    Double.parseDouble(edtSize.getText().toString()),
+                    edtBranch.getText().toString(),
+                    Double.parseDouble(edtCondition.getText().toString()),
+                    ProductHistory.PENDING,
+                    String.format("%s (%s)", txtFee.getText().toString(), txtRate.getText().toString()));
             AppDatabase.getInstance(this).historyProductDAO().insert(productHistory);
             this.finish();
         });

@@ -1,6 +1,5 @@
 package binh.pc.trigonic;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,10 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.model.Image;
@@ -20,12 +17,11 @@ import com.esafirm.imagepicker.model.Image;
 import java.util.ArrayList;
 
 import binh.pc.trigonic.database.AppDatabase;
-import binh.pc.trigonic.models.CartAdapter;
 import binh.pc.trigonic.models.HistoryAdapter;
 
 public class LoggedSellActivity extends AppCompatActivity {
     private RecyclerView historyRecyclerView;
-    private HistoryAdapter cartAdapter;
+    private HistoryAdapter historyAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +30,10 @@ public class LoggedSellActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> this.finish());
-        cartAdapter = new HistoryAdapter(this, AppDatabase.getInstance(this).historyProductDAO().getAll());
+        historyAdapter = new HistoryAdapter(this, AppDatabase.getInstance(this).historyProductDAO().getAll());
         historyRecyclerView = findViewById(R.id.recycler_history);
         historyRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        historyRecyclerView.setAdapter(cartAdapter);
+        historyRecyclerView.setAdapter(historyAdapter);
     }
 
     @Override

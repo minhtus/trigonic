@@ -1,9 +1,6 @@
 package binh.pc.trigonic.database;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
+import androidx.room.*;
 
 import java.util.List;
 
@@ -15,8 +12,11 @@ public interface HistoryProductDAO {
     @Insert
     void insert(ProductHistory productHistory);
 
-    @Query("select * from History")
+    @Query("select * from History order by id desc")
     List<ProductHistory> getAll();
+
+    @Update
+    void update(ProductHistory productHistory);
 
     @Delete
     void delete(ProductHistory productHistory);

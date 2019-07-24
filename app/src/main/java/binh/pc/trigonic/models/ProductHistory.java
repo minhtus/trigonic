@@ -17,8 +17,15 @@ public class ProductHistory implements Serializable {
     private double size;
     private String branch;
     private double cond;
+    private String status;
+    private String fee;
 
-    public ProductHistory(String image, String name, String colors, String category, int price, double size, String branch, double cond) {
+    public static String PENDING = "Đang chờ duyệt";
+    public static String CHECKED = "Đã duyệt";
+    public static String REJECTED = "Đã từ chối";
+    public static String CANCELED = "Đã huỷ";
+
+    public ProductHistory(String image, String name, String colors, String category, int price, double size, String branch, double cond, String status, String fee) {
         this.image = image;
         this.name = name;
         this.colors = colors;
@@ -27,6 +34,8 @@ public class ProductHistory implements Serializable {
         this.size = size;
         this.branch = branch;
         this.cond = cond;
+        this.status = status;
+        this.fee = fee;
     }
 
     public String getName() {
@@ -99,5 +108,21 @@ public class ProductHistory implements Serializable {
 
     public void setSize(double size) {
         this.size = size;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getFee() {
+        return fee;
+    }
+
+    public void setFee(String fee) {
+        this.fee = fee;
     }
 }
