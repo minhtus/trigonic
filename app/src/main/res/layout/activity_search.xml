@@ -25,121 +25,15 @@
             android:elevation="4dp"
             android:layout_height="wrap_content"/>
     </FrameLayout>
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_men"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/border"
-        >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp" 
-            android:background="@drawable/jpm720"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:background="#F6F6F6">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Jordan Proto-Max 720"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="#000"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="Đen/Đỏ"
-                android:textStyle="bold"
-                android:textSize="19dp"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        />
 
 
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/border">
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/ajxxxii"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:background="#F6F6F6">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Jordan Proto-Max 720"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="#000"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="Đen/Đỏ"
-                android:textStyle="bold"
-                android:textSize="19dp"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/border">
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/aj14rse"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:background="#F6F6F6">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Jordan Proto-Max 720"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="#000"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="Đen/Đỏ"
-                android:textStyle="bold"
-                android:textSize="19dp"
-                android:layout_marginLeft="15dp"
-                />
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 
 
 </LinearLayout>
