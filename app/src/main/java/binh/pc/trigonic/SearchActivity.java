@@ -27,10 +27,11 @@ public class SearchActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_search, container, false);
         toolbar = (Toolbar)view.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-
-        searchView = (MaterialSearchView)view.findViewById(R.id.search_view);
+        searchView = view.findViewById(R.id.search_view);
         searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
         searchView.setEllipsize(true);
+        searchView.showSearch(false);
+
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -66,6 +67,8 @@ public class SearchActivity extends Fragment {
         inflater.inflate(R.menu.material_search, menu);
         MenuItem item = menu.findItem(R.id.action_search);
         searchView.setMenuItem(item);
+
+
     }
 
     @Override
